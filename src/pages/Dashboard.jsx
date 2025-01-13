@@ -5,7 +5,7 @@ import AdminDashboard from '../components/Dashboard/AdminDashboard';
 
 const Dashboard = () => {
   // In a real application, you would determine the user role from authentication
-  const userRole = 'student'; // This could be 'student', 'teacher', or 'admin'
+  const userRole = 'teacher'; // This could be 'student', 'teacher', or 'admin'
 
   return (
     <div>
