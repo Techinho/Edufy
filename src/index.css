@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .course:hover> :not(:hover){
+    filter:blur(2px);
+    opacity:0.8;
+
+} */

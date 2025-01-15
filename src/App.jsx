@@ -9,11 +9,12 @@ import NotFound from './pages/NotFound';
 import AssignmentForm from './components/Assignments/AssignmentForm';
 import AnalyticsChart from './components/Analytics/AnalyticsChart';
 import AssignmentList from './components/Assignments/AssignmentList';
+import Students from './components/Users/Students';
+
+
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-100">
         <Routes>
           <Route exact path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
@@ -23,12 +24,14 @@ function App() {
           <Route path="/assignments" element={<AssignmentList/>} />
           <Route path="/assignments/new" element={<AssignmentForm/>} />
           <Route path="/analytics" element={<AnalyticsChart/>} />
-          <Route element={<NotFound/>} />
+          <Route path="/students" element={<Students/>} />
+          <Route path='*' element={<NotFound/>} />
         </Routes>
-      </div>
-    </Router>
+
+ 
   );
 }
+
 
 export default App;
 

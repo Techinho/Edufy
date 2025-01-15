@@ -1,116 +1,46 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import VideoPlaylist from './VideoPlaylist';
-
-// Mock data for courses
-const courses = {
-  1: {
-    id: 1,
-    title: 'Introduction to React',
-    instructor: 'John Doe',
-    description: 'Learn the basics of React, including components, state, and props.',
-    duration: '4 weeks',
-    level: 'Beginner',
-    videos: [
-      {
-        title: 'React Fundamentals',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'An introduction to React and its core concepts.',
-        duration: '10:30'
-      },
-      {
-        title: 'Components and Props',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Learn how to create and use React components.',
-        duration: '15:45'
-      },
-      {
-        title: 'State and Lifecycle',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Understand state management and component lifecycle.',
-        duration: '12:20'
-      }
-    ]
-  },
-  2: {
-    id: 2,
-    title: 'Advanced JavaScript',
-    instructor: 'Jane Smith',
-    description: 'Dive deep into JavaScript concepts like closures, prototypes, and async programming.',
-    duration: '6 weeks',
-    level: 'Advanced',
-    videos: [
-      {
-        title: 'Closures and Prototypes',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Understanding closures and prototypes in JavaScript.',
-        duration: '18:00'
-      },
-      {
-        title: 'Asynchronous Programming',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Learn about async/await and promises.',
-        duration: '20:30'
-      }
-    ]
-  },
-  3: {
-    id: 3,
-    title: 'Python for Beginners',
-    instructor: 'Bob Johnson',
-    description: 'Start your journey with Python, covering basic syntax, data structures, and functions.',
-    duration: '5 weeks',
-    level: 'Beginner',
-    videos: [
-      {
-        title: 'Introduction to Python',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Getting started with Python basics.',
-        duration: '15:00'
-      },
-      {
-        title: 'Data Structures in Python',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Lists, tuples, dictionaries, and sets.',
-        duration: '12:45'
-      }
-    ]
-  },
-  4: {
-    id: 4,
-    title: 'Data Structures and Algorithms',
-    instructor: 'Alice Brown',
-    description: 'Learn essential data structures and algorithms for efficient problem-solving.',
-    duration: '8 weeks',
-    level: 'Intermediate',
-    videos: [
-      {
-        title: 'Arrays and Linked Lists',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Introduction to arrays and linked lists.',
-        duration: '18:00'
-      },
-      {
-        title: 'Sorting Algorithms',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-        description: 'Bubble sort, merge sort, and quick sort.',
-        duration: '25:00'
-      }
-    ]
-  },
-};
+import { AppContext } from '../../context/appContext';
+import NotFound from '../../pages/NotFound';
 
 const CourseDetails = () => {
+
+  const{courses}=useContext(AppContext)
   const { id } = useParams();
-  const course = courses[id];
+  const course = courses.find((course)=>(course.id===parseInt(id)));
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    if (course?.playlistId) {
+      fetchVideosFromPlaylist(course.playlistId);
+    }
+  }, [course]);
+
+  const fetchVideosFromPlaylist = async (playlistId) => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&key=AIzaSyDgqSa3Qw45lDbGJ5FcpyAkJsHGYIldrKE&maxResults=10`
+      );
+      const data = await response.json();
+      const formattedVideos = data.items.map((item) => ({
+        title: item.snippet.title,
+        url: `https://www.youtube.com/embed/${item.snippet.resourceId.videoId}`,
+        description: item.snippet.description,
+      }));
+      setVideos(formattedVideos);
+    } catch (error) {
+      console.error('Error fetching playlist videos:', error);
+    }
+  };
 
   if (!course) {
-    return <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">Course not found</div>;
+    return <NotFound/>;
   }
 
   return (
     <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+      <div className="bg-white  overflow-hidden sm:rounded-tl-lg sm:rounded-tr-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium text-gray-900">{course.title}</h3>
           <p className="mt-1 max-w-2xl text-sm text-gray-500">{course.instructor}</p>
@@ -132,10 +62,9 @@ const CourseDetails = () => {
           </dl>
         </div>
       </div>
-      {course.videos && course.videos.length > 0 && <VideoPlaylist videos={course.videos} />}
+      {videos.length > 0 && <VideoPlaylist videos={videos} />}
     </div>
   );
 };
 
 export default CourseDetails;
-
