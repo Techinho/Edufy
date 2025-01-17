@@ -1,18 +1,16 @@
 
-
-
  export const courses = [
     {
       id: 1,
       title: 'ReactJS Crash Course 2023',
       instructor: 'Traversy Media',
       description: 'Learn ReactJS basics including components, state, and props.',
-      duration: '4 weeks',
+      duration: '2 months',
       level: 'Beginner',
-      playlistId: 'PLillGF-RfqbY3c2r0htQyFYO9e8I51NIg', // Updated playlist ID
+      playlistId: 'PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza', // Updated playlist ID
       enrolled: 50,
       videoCount: 6,
-      thumbnail: 'https://img.youtube.com/vi/w7ejDZ8SWv8/sddefault.jpg',
+      thumbnail: 'https://img.youtube.com/vi/MHn66JJH5zs/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Frontend',
       language: 'English',
