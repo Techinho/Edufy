@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="w-10 h-10  rounded-full flex items-center justify-center">
               <img src={iconimg} alt="icon" />
             </div>
-            <span className="text-blue-300  ml-3 text-2xl font-bold">TeachEdu</span>
+            <span className="text-blue-300  ml-3 text-2xl font-bold">TechEdu</span>
           </NavLink>
 
           {/* Desktop Menu */}
