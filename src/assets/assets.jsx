@@ -1,4 +1,5 @@
-
+import icon from "./browser_4455840.png"
+export const iconimg =icon
  export const courses = [
     {
       id: 1,
@@ -17,18 +18,48 @@
     },
     {
       id: 2,
-      title: 'JavaScript Full Course',
-      instructor: 'freeCodeCamp.org',
+      title: 'JavaScript tutorial for beginners 🌐',
+      instructor: 'Bro Code',
       description: 'Comprehensive JavaScript course covering basics to advanced concepts.',
       duration: '8 weeks',
       level: 'Beginner to Advanced',
-      playlistId: 'PLWKjhJtqVAbljeMjAXDUCMhLBgk5jJIMW', // Updated playlist ID
+      playlistId: 'PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv', // Updated playlist ID
       enrolled: 85,
       videoCount: 38,
-      thumbnail: 'https://img.youtube.com/vi/PkZNo7MFNFg/sddefault.jpg',
+      thumbnail: 'https://img.youtube.com/vi/Ihy0QziLDf0/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Programming Languages',
       language: 'English',
+    },
+    {
+      id: 15,
+      title: 'كورس جافا سكريبت كامل بالعربي',
+      instructor: 'Abdelrahman Gamal',
+      description: '. شاملة تغطي الأساسيات والمفاهيم المتقدمة JavaScript دورة',
+      duration: '8 weeks',
+      level: 'Beginner to Advanced', 
+      playlistId: 'PLknwEmKsW8OuTqUDaFRBiAViDZ5uI3VcE', // Updated playlist ID
+      enrolled: 85,
+      videoCount: 38,
+      thumbnail: 'https://img.youtube.com/vi/PWuTLTFMtYw/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Programming Languages',
+      language: 'Arabic',
+    },
+    {
+      id: 17,
+      title: "React js darija (شرح بالدارجة)",
+      instructor: 'Jamaoui Mouad',
+      description: 'React js darija (شرح بالدارجة)',
+      duration: '8 weeks',
+      level: 'intermediaire', 
+      playlistId: 'PLm_sigBWSRY3FPx6aEMVzyx0d9y-IDWvF', // Updated playlist ID
+      enrolled: 85,
+      videoCount: 38,
+      thumbnail: 'https://img.youtube.com/vi/CqgUaY8z3Rg/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Programming Languages',
+      language: 'Arabic',
     },
     {
       id: 3,
@@ -37,7 +68,7 @@
       description: 'Master Python basics with hands-on projects.',
       duration: '5 weeks',
       level: 'Beginner',
-      playlistId: 'PLTjRvDozrdlxEIuOBZkMAK5uiqp8rHUax', // Updated playlist ID
+      playlistId: 'PLAXnLdrLnQpQa83vHV2Cbj4BRiQakmJuc', // Updated playlist ID
       enrolled: 75,
       videoCount: 11,
       thumbnail: 'https://img.youtube.com/vi/_uQrJ0TkZlc/sddefault.jpg',
@@ -75,21 +106,21 @@
       subcategory: 'Machine Learning',
       language: 'English',
     },
-    {
-      id: 6,
-      title: 'Full-Stack Web Development Bootcamp',
-      instructor: 'The Net Ninja',
-      description: 'Comprehensive course covering HTML, CSS, JavaScript, React, and Node.js.',
-      duration: '12 weeks',
-      level: 'Beginner to Advanced',
-      playlistId: 'PL4cUxeGkcC9jLYyp2uCJb0l2_Ci1b-aSc', // Updated playlist ID
-      enrolled: 120,
-      videoCount: 45,
-      thumbnail: 'https://img.youtube.com/vi/pkMUI8ENXts/sddefault.jpg',
-      category: 'Web Development',
-      subcategory: 'Full Stack',
-      language: 'English',
-    },
+    // {
+    //   id: 6,
+    //   title: 'Full Stack Web Development using MERN Stack ',
+    //   instructor: 'CodeHelp - by Babbar',
+    //   description: 'Comprehensive course covering HTML, CSS, Javascript ,Mern Stack',
+    //   duration: '12 weeks',
+    //   level: 'Beginner to Advanced',
+    //   playlistId: 'PLDzeHZWIZsTo0wSBcg4-NMIbC0L8evLrD', // Updated playlist ID
+    //   enrolled: 120,
+    //   videoCount: 45,
+    //   thumbnail: 'https://img.youtube.com/vi/Vi9bxu-M-ag/sddefault.jpg',
+    //   category: 'Web Development',
+    //   subcategory: 'Full Stack',
+    //   language: 'English',
+    // },
     {
       id: 7,
       title: 'Cybersecurity Fundamentals',
@@ -141,7 +172,7 @@
       description: 'Introduction to TypeScript and how it enhances JavaScript development.',
       duration: '3 weeks',
       level: 'Beginner',
-      playlistId: 'PL55RiY5tL51qimLHksqfDT9Efx2NDEe9s', // Updated playlist ID
+      playlistId: 'PLRAV69dS1uWRPSfKzwZsIm-Axxq-LxqhW', // Updated playlist ID
       enrolled: 40,
       videoCount: 15,
       thumbnail: 'https://img.youtube.com/vi/BwuLxPH8IDs/sddefault.jpg',
@@ -167,14 +198,14 @@
     {
       id: 13,
       title: 'SQL Full Course',
-      instructor: 'Simplilearn',
+      instructor: 'Zak ISMAILI',
       description: 'Master SQL queries, database design, and data analysis.',
       duration: '6 weeks',
       level: 'Beginner to Intermediate',
-      playlistId: 'PLAA9E0FD28900FA76', // Updated playlist ID
+      playlistId: 'PLFtlZvb4qwees1u9G58Iu0Vq_Dzj4zX5N', // Updated playlist ID
       enrolled: 80,
       videoCount: 20,
-      thumbnail: 'https://img.youtube.com/vi/HhHG90w5XxA/sddefault.jpg',
+      thumbnail: 'https://img.youtube.com/vi/pKuOAqKpGdw/sddefault.jpg',
       category: 'Data Science',
       subcategory: 'Databases',
       language: 'English',
@@ -208,5 +239,159 @@
       category: 'Artificial Intelligence',
       subcategory: 'Basics',
       language: 'English',
+    },
+    {
+      id: 16,
+      title: 'cssكورس  كامل بالعربي',
+      instructor: 'Abdelrahman Gamal',
+      description: 'css بالعربي | تعلم css بسهولة.',
+      duration: '7 weeks',
+      level: 'Beginner',
+      playlistId: 'PLknwEmKsW8Os7rKViMCL8x6irVJT7McSS', // Updated playlist ID
+      enrolled: 55,
+      videoCount: 10,
+      thumbnail: 'https://img.youtube.com/vi/_QO55W7KPmI/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Frontend',
+      language: 'Arabic',
+    },
+  ];
+  export const faqs = [
+    {
+      question: "Are the courses really 100% free?",
+      answer: "Yes, all courses on TechEdu are completely free. We believe in making quality tech education accessible to everyone."
+    },
+    {
+      question: "How long do I have access to the courses?",
+      answer: "Once you enroll in a course, you have lifetime access to its content. Learn at your own pace without any time restrictions."
+    },
+    {
+      question: "Do I get a certificate upon completion?",
+      answer: "Yes, you'll receive a digital certificate of completion for each course you finish. These can be shared on your resume or LinkedIn profile."
+    },
+    {
+      question: "Can I interact with instructors and other students?",
+      answer: "Each course has a discussion forum where you can ask questions, share ideas, and interact with instructors and fellow learners."
+    },
+    {
+      question: "What if I need help with a course?",
+      answer: "We offer various support options including course forums, email support, and live Q&A sessions with instructors for complex topics."
     }
   ];
+  
+  export const books = [
+    {
+      id: 1,
+      title: 'The Pragmatic Programmer',
+      author: 'Andrew Hunt, David Thomas',
+      description: 'A book about the principles and practices of software development.',
+      pages: 320,
+      level: 'Intermediate',
+      category: 'Software Engineering',
+      language: 'English',
+      isbn: '978-0201616224',
+      coverImage: 'https://m.media-amazon.com/images/I/61ztlXgCmpL._SY425_.jpg',
+      link: 'https://www.amazon.com/dp/020161622X',
+      article: `The Pragmatic Programmer is an essential read for software developers, offering a practical approach to mastering the art of programming. The book is filled with time-tested tips, techniques, and philosophies that help you write efficient, reliable, and maintainable code. It covers key topics like design principles, debugging, refactoring, and the importance of lifelong learning in programming. By applying its advice, developers can improve both their technical skills and their career prospects.`
+    },
+    {
+      id: 2,
+      title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+      author: 'Robert C. Martin',
+      description: 'Learn how to write clean, efficient, and maintainable code.',
+      pages: 464,
+      level: 'Intermediate to Advanced',
+      category: 'Software Engineering',
+      language: 'English',
+      isbn: '978-0132350884',
+      coverImage: 'https://m.media-amazon.com/images/I/51E2055ZGUL._SY425_.jpg',
+      link: 'https://www.amazon.com/dp/0132350882',
+      article: `Clean Code by Robert C. Martin (Uncle Bob) is a must-read for developers who want to elevate the quality of their code. It dives into the practices of writing clean, readable, and maintainable code. The book emphasizes the importance of coding standards, testing, and refactoring. By following the principles outlined in the book, developers can produce code that is easier to understand, modify, and extend. If you aspire to be a true craftsman of software, this book is for you.`
+    },
+    {
+      id: 3,
+      title: 'Introduction to Algorithms',
+      author: 'Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein',
+      description: 'Comprehensive guide to algorithms, widely used as a textbook.',
+      pages: 1312,
+      level: 'Advanced',
+      category: 'Computer Science',
+      language: 'English',
+      isbn: '978-0262033848',
+      coverImage: 'https://m.media-amazon.com/images/I/61Pgdn8Ys-L._SY425_.jpg',
+      link: 'https://www.amazon.com/dp/0262033844',
+      article: `Considered one of the most comprehensive and authoritative textbooks on algorithms, Introduction to Algorithms (also known as CLRS) is essential for anyone serious about computer science. The book covers a wide array of algorithms and data structures, providing clear explanations and detailed proofs. Whether you're studying for exams or want to deepen your understanding of algorithms, this book is a must-have reference for computer science students and professionals alike.`
+    },
+    {
+      id: 4,
+      title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
+      author: 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides',
+      description: 'Classic book about design patterns in object-oriented software development.',
+      pages: 395,
+      level: 'Advanced',
+      category: 'Software Engineering',
+      language: 'English',
+      isbn: '978-0201633610',
+      coverImage: 'https://m.media-amazon.com/images/I/41l2KFHRcFL._SY445_SX342_.jpg',
+      link: 'https://www.amazon.com/dp/0201633612',
+      article: `Design Patterns is a classic in software engineering, providing solutions to common design problems in object-oriented programming. Written by the "Gang of Four," the book introduces key design patterns such as Singleton, Factory, and Observer, which are widely used in software development today. This book helps developers create flexible and reusable software systems, reducing complexity and increasing the maintainability of code.`
+    },
+    {
+      id: 5,
+      title: 'Python Crash Course',
+      author: 'Eric Matthes',
+      description: 'A hands-on, project-based introduction to programming using Python.',
+      pages: 560,
+      level: 'Beginner to Intermediate',
+      category: 'Programming',
+      language: 'English',
+      isbn: '978-1593279288',
+      coverImage: 'https://m.media-amazon.com/images/I/51JcFufVwGL._SY445_SX342_.jpg',
+      link: 'https://www.amazon.com/dp/1593279280',
+      article: `Python Crash Course is an excellent introduction to Python programming for beginners. The book offers a hands-on approach, with plenty of projects to solidify your understanding of Python. It covers essential concepts like variables, loops, and functions, as well as advanced topics such as file handling, web development, and data visualization. By the end of the book, you'll have the skills to start building your own Python applications.`
+    },
+    {
+      id: 6,
+      title: 'Artificial Intelligence: A Modern Approach',
+      author: 'Stuart Russell, Peter Norvig',
+      description: 'Comprehensive introduction to the field of Artificial Intelligence.',
+      pages: 1152,
+      level: 'Intermediate to Advanced',
+      category: 'Artificial Intelligence',
+      language: 'English',
+      isbn: '978-0134610993',
+      coverImage: 'https://m.media-amazon.com/images/I/51l11gbqykL._SX342_SY445_.jpg',
+      link: 'https://www.amazon.com/dp/0134610997',
+      article: `Artificial Intelligence: A Modern Approach is one of the most popular textbooks for learning about AI. Written by Stuart Russell and Peter Norvig, the book covers a broad range of AI topics, from problem-solving and search algorithms to machine learning and robotics. It's suitable for both beginners and advanced students, providing a strong theoretical foundation and practical examples for real-world applications in AI.`
+    },
+    {
+      id: 7,
+      title: 'The Mythical Man-Month',
+      author: 'Frederick P. Brooks Jr.',
+      description: 'Classic book on software engineering and project management.',
+      pages: 332,
+      level: 'Intermediate',
+      category: 'Software Engineering',
+      language: 'English',
+      isbn: '978-0201835953',
+      coverImage: 'https://m.media-amazon.com/images/I/51TG5T+dd7L._SY445_SX342_.jpg',
+      link: 'https://www.amazon.com/dp/0201835959',
+      article: `The Mythical Man-Month is a classic book on software engineering and project management, exploring the challenges faced when managing large software projects. It introduces the concept of "Brooks's Law," which states that adding more developers to a late project only makes it later. The book is full of timeless insights that are still relevant to modern software engineering practices, making it a must-read for managers and developers alike.`
+    },
+    {
+      id: 8,
+      title: 'Machine Learning Yearning',
+      author: 'Andrew Ng',
+      description: 'A guide to understanding machine learning and its real-world applications.',
+      pages: 150,
+      level: 'Beginner to Intermediate',
+      category: 'Machine Learning',
+      language: 'English',
+      isbn: '978-0999736407',
+      coverImage: 'https://m.media-amazon.com/images/I/51SLnCjnj-L._SY445_SX342_.jpg',
+      link: 'https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1098125975/ref=sr_1_1?s=books&sr=1-1',
+      article: `Machine Learning Yearning by Andrew Ng is an insightful guide for those looking to understand how to structure machine learning projects. The book delves into best practices for developing and deploying machine learning models, helping readers avoid common pitfalls. Although the book is relatively short, it provides crucial insights into practical machine learning and is perfect for anyone looking to take their ML knowledge to the next level.`
+    }
+  ];
+  
+  

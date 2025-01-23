@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 const VideoPlaylist = ({ videos }) => {
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [currentVideo, setCurrentVideo] = useState(videos[0]); // Initialize as null
   const [searchTerm, setSearchTerm] = useState('');
+  
+  useEffect(() => {
+    if (videos.length > 0 && !currentVideo) {
+      setCurrentVideo(videos[0]); // Set the first video as the current video
+    }
+  }, [videos,currentVideo]); // Only runs when the videos array changes
 
   // Filter videos based on search term
   const filteredVideos = videos.filter((video) =>
@@ -27,16 +33,6 @@ const VideoPlaylist = ({ videos }) => {
             <h2 className="text-2xl font-semibold text-gray-800">
               {currentVideo.title}
             </h2>
-            <div className="flex flex-wrap gap-2">
-              {currentVideo.tags?.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 text-sm bg-blue-100 text-blue-600 rounded-full"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
@@ -73,7 +69,6 @@ const VideoPlaylist = ({ videos }) => {
                     <h4 className="text-sm font-semibold text-gray-800 line-clamp-2">
                       {video.title}
                     </h4>
-
                   </li>
                 ))
               ) : (

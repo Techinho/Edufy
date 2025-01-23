@@ -7,8 +7,8 @@ import Loader from '../Loader';
 
 const CourseDetails = () => {
   const { courses, fetchVideosFromPlaylist, videos,isLoading } = useContext(AppContext);
-  const { id } = useParams();
-  const course = courses.find((course) => course.id === parseInt(id));
+  const { title } = useParams();
+  const course = courses.find((course) => course.title === title);
 
   useEffect(() => {
     if (course?.playlistId) {
@@ -49,7 +49,7 @@ const CourseDetails = () => {
       {/* Similar Courses */}
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Similar Courses</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {similarCourses.map((similarCourse) => (
             <div
               key={similarCourse.id}
@@ -68,13 +68,13 @@ const CourseDetails = () => {
                 <p className="text-sm text-gray-600 mt-1">{similarCourse.category}</p>
                 <button
                   className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-600 transition"
-                  onClick={() => window.location.href = `/courses/${similarCourse.id}`}
+                  onClick={() => window.location.href = `/courses/${similarCourse.title}`}
                 >
                   View Details
                 </button>
               </div>
             </div>
-          ))}
+          )).slice(0,4)}
         </div>
         {similarCourses.length === 0 && (
           <p className="text-gray-600 text-center mt-6">No similar courses found.</p>

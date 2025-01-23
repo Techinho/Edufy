@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +10,7 @@ const LoginForm = () => {
     e.preventDefault();
     // Implement login logic here
     console.log('Login:', email, password);
-    navigate.push('/dashboard');
+    navigate('/');
   };
 
   return (
@@ -52,6 +52,7 @@ const LoginForm = () => {
         >
           Sign in
         </button>
+        <div className='text-center py-2'><p clas >Don't have an account? <Link className='text-blue-500 text-lg' to="/signup">Sign Up</Link></p></div>
       </div>
     </form>
   );

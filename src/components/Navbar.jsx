@@ -1,7 +1,9 @@
-'use client';
+
 
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { iconimg } from '../assets/assets';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,10 +29,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <NavLink to="/" className="flex items-center">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">T</span>
+            <div className="w-10 h-10  rounded-full flex items-center justify-center">
+              <img src={iconimg} alt="icon" />
             </div>
-            <span className="ml-3 text-2xl font-bold text-white">TeachEdu</span>
+            <span className="text-blue-300  ml-3 text-2xl font-bold">TeachEdu</span>
           </NavLink>
 
           {/* Desktop Menu */}
@@ -38,7 +40,6 @@ const Navbar = () => {
             <NavItem to="/">Home</NavItem>
             <NavItem to="/courses">Courses</NavItem>
             <NavItem to="/books">Books</NavItem>
-            <NavItem to="/articles">Articles</NavItem>
             <NavItem to="/contact">Contact</NavItem>
             <NavLink to="/signup" className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-cyan-400 rounded-md hover:from-blue-600 hover:to-cyan-500">
               Get Started
@@ -63,7 +64,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 border-t border-gray-700">
+        <div className="absolute w-full md:hidden bg-gray-800 border-t border-gray-700">
           <NavItem to="/">Home</NavItem>
           <NavItem to="/courses">Courses</NavItem>
           <NavItem to="/books">Books</NavItem>

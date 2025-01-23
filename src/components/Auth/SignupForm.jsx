@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const SignupForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('student');
+  const [confPassword, setConfPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Implement signup logic here
-    console.log('Signup:', name, email, password, role);
-    navigate.push('/dashboard');
+    console.log('Signup:', name, email, password, confPassword);
+    navigate('/');
   };
 
   return (
@@ -52,10 +53,9 @@ const SignupForm = () => {
           Password
         </label>
         <input
-          id="password"
-          name="password"
+        
           type="password"
-          autoComplete="new-password"
+         
           required
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           value={password}
@@ -63,20 +63,20 @@ const SignupForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="role" className="block text-sm font-medium text-gray-700">
-          Role
+        <label htmlFor="Confirmpassword" className="block text-sm font-medium text-gray-700">
+          Confirm Password
         </label>
-        <select
-          id="role"
-          name="role"
+        <input
+          type="password"
+          required
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-        >
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-          <option value="admin">Admin</option>
-        </select>
+          value={confPassword}
+          onChange={(e) => setConfPassword(e.target.value)}
+        />
+      </div>
+      <div>
+
+
       </div>
       <div>
         <button
@@ -85,6 +85,7 @@ const SignupForm = () => {
         >
           Sign up
         </button>
+        <div className='text-center py-2'><p clas >Already have an account? <Link className='text-blue-500 text-lg' to="/login">Login</Link></p></div>
       </div>
     </form>
   );
