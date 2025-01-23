@@ -16,9 +16,6 @@ const subjects = [
 ];
 
 const studentGrades = ["A", "B", "C", "D", "E", "F"];
-const getCountrySpecificAvatar = (country = 'MA') => {
-    return `https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 99)}.jpg`;
-  };
 
 const generateFakeStudents = (count = 50) => {
   return Array.from({ length: count }).map(() => ({

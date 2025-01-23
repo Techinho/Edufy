@@ -7,7 +7,7 @@ const ContactUs = () => {
     message: '',
   });
 
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

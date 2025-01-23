@@ -1,7 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 
 /* .course:hover> :not(:hover){
@@ -24,4 +26,13 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: #a0aec0; /* Darker on hover */
   }
+  .abril-fatface-regular {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  *{
+    font-family:"Abril Fatface", serif ;
+  }
+  
   

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const DiscoverBooks = () => {
   return (
@@ -19,12 +20,13 @@ const DiscoverBooks = () => {
             <li>Covers a wide range of tech domains</li>
             <li>Updated regularly with the latest publications</li>
           </ul>
-          <button
+          <Link
+          to={"/books"}
             className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105"
             data-aos="zoom-in"
           >
             Explore Tech Books
-          </button>
+          </Link>
         </div>
         <div className="relative" data-aos="fade-left">
           <img

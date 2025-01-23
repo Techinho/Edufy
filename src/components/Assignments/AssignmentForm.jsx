@@ -13,10 +13,10 @@ const AssignmentForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
-  const { courses } = useContext(AppContext)  // Access courses from context
+  const { courses } = useContext(AppContext)  
   const assignments = useSelector((state) => state.assignments);
 
-  // Load assignment data if editing
+
   useEffect(() => {
     if (id) {
       const assignmentToEdit = assignments.find((a) => a.id === parseInt(id));

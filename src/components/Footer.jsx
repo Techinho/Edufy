@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -13,16 +14,16 @@ const Footer = () => {
       <div>
         <h2 className="text-xl font-bold mb-4">Quick Links</h2>
         <ul className="space-y-2 text-sm">
-          <li><a href="#" className="hover:text-blue-400">All Courses</a></li>
-          <li><a href="#" className="hover:text-blue-400">For Students</a></li>
-          <li><a href="#" className="hover:text-blue-400">For Instructors</a></li>
-          <li><a href="#" className="hover:text-blue-400">Resources</a></li>
+          <li><Link to={"/courses"} className="hover:text-blue-400">All Courses</Link></li>
+          <li><Link to={"/courses/category/Web Development"} className="hover:text-blue-400">Web Development</Link></li>
+          <li><Link to={"/courses/category/Cybersecurity"} className="hover:text-blue-400">Cybersecurity</Link></li>
+          <li><Link to={"/courses/category/Computer Science"} className="hover:text-blue-400">Computer Science</Link></li>
         </ul>
       </div>
       <div>
         <h2 className="text-xl font-bold mb-4">Contact</h2>
         <p className="text-sm">Email: support@techedu.com</p>
-        <p className="text-sm">Phone: +1 (555) 123-4567</p>
+        <p className="text-sm">Phone: +212 682-146-122</p>
       </div>
     </div>
     <div className="bg-blue-900 text-center py-4">

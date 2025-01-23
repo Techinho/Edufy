@@ -16,7 +16,7 @@ const AppContextProvider = (props) => {
             part: "snippet",
             playlistId: playlistId,
             key: "AIzaSyAwZnyy5arkw1D9InRU4G0H-iehW11CZWw",
-            maxResults: 100,
+            maxResults: 50,
           },
         }
       );
@@ -35,7 +35,6 @@ const AppContextProvider = (props) => {
       setVideos(formattedVideos);
       setIsLoading(false);
 
-
        // Update state with fetched videos
       console.log("Fetched data:", data);
       return formattedVideos;
@@ -46,7 +45,6 @@ const AppContextProvider = (props) => {
     }
   };
   
-
   const value = {
     courses,
     videos, // Allow global access to fetched videos

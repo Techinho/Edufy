@@ -78,7 +78,7 @@ const BooksByCategory = () => {
            <p className="text-sm text-gray-600 mt-1 truncate">{categoryBook.category}</p>
            <button
              className="mt-auto bg-indigo-500 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-600 transition"
-             onClick={() => navigate(`/Books/${categoryBook.title}`)}
+             onClick={() => navigate(`/Books/${categoryBook.id}`)}
            >
              View Details
            </button>

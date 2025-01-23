@@ -7,9 +7,7 @@ import Discovercourses from "../components/welcome/Discovercourses"
 import DiscoverTeachers from "../components/welcome/DiscoverTeachers"
 import WhyChoose from "../components/welcome/WhyChoose"
 import DiscoverBooks from "../components/welcome/DiscoverBooks"
-import DiscoverArticles from "../components/welcome/DiscoverArticles"
 import CallToAction from "../components/welcome/CallToAction"
-
 
 export default function Home() {
   useEffect(() => {
@@ -28,7 +26,6 @@ export default function Home() {
       <WhyChoose/>
       <Faqs />
       <DiscoverBooks/>
-      <DiscoverArticles/>
       <CallToAction/>
     </main>
   )

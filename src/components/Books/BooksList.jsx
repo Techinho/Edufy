@@ -25,7 +25,7 @@ const BooksList = () => {
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-white shadow">
         <div className="mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="uppercase text-center text-3xl font-bold text-gray-900">Book Catalog</h1>
+          <h1 className="uppercase text-center text-3xl font-bold text-gray-900">Browse Books</h1>
         </div>
       </header>
 

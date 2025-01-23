@@ -2,17 +2,20 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteAssignment, toggleAssignmentCompleted } from '../../redux/actions/actions';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AssignmentList = () => {
   const assignments = useSelector((state) => state.assignments);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
-    dispatch(deleteAssignment(id));
+    dispatch(deleteAssignment(id))
+    toast.error("Assignment deleted succesfuly")
   };
 
   const handleToggleCompleted = (id) => {
-    dispatch(toggleAssignmentCompleted(id));
+    dispatch(toggleAssignmentCompleted(id))
+    toast.success("Assignment Completed")
   };
 
   return (
