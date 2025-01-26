@@ -11,7 +11,7 @@ import AnalyticsChart from './components/Analytics/AnalyticsChart';
 import AssignmentList from './components/Assignments/AssignmentList';
 import Students from './components/Users/Students';
 import BooksList from './components/Books/BooksList';
-import Books from './pages/books';
+import Books from './pages/Books';
 import ContactUs from './pages/Contact';
 import Assignment from './pages/Assignment';
 
