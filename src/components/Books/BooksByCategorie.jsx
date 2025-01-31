@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AppContext } from '../../context/appContext';
+import { AppContext } from '../../context/AppContext';
 
 const BooksByCategory = () => {
   const { category } = useParams();

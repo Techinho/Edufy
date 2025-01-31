@@ -1,12 +1,31 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../../context/appContext';
+import { AppContext } from '../../context/AppContext';
+import CourseCard from './CourseCard';
+import { motion } from 'framer-motion';
 
 const CourseList = () => {
   const { courses } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Unique features
   const categories = [...new Set(courses.map(course => course.category))];
+  const timeBasedGreeting = () => {
+    const hour = new Date().getHours();
+    return hour < 12 ? 'Good Morning' : hour < 18 ? 'Good Afternoon' : 'Good Evening';
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const filteredCourses = courses.filter(course =>
     course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -15,118 +34,217 @@ const CourseList = () => {
   );
 
   const coursesByCategory = categories.reduce((acc, category) => {
-    acc[category] = filteredCourses.filter(course => course.category === category);
+    const categoryCourses = filteredCourses.filter(course => course.category === category);
+    if (categoryCourses.length > 0) {
+      acc[category] = {
+        courses: categoryCourses.slice(0, 3),
+        total: categoryCourses.length
+      };
+    }
     return acc;
   }, {});
 
   const hasResults = filteredCourses.length > 0;
 
-  return (
-    <div className="bg-gray-100 min-h-screen">
-      <header className="bg-white shadow">
-        <div className=" mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="uppercase text-center text-3xl font-bold text-gray-900">BROWSE COURSES</h1>
-        </div>
-      </header>
+  // Professional category icons
+  const getCategoryIcon = (category) => {
+    const icons = {
+      'Web Development': '👨💻',
+      'Programming': '⌨️',
+      'Computer Science': '🧠',
+      'Data Science': '📊',
+      'Cybersecurity': '🛡️',
+      'Cloud Computing': '☁️',
+      'Operating Systems': '🖥️',
+      'Mobile Development': '📱',
+      'Artificial Intelligence': '🤖',
+      'Frontend': '🖼️',
+      'Backend': '⚙️',
+      'Algorithms': '🔢',
+      'Machine Learning': '🤖',
+      'Databases': '🗄️',
+      'Network Security': '🔒',
+      'Infrastructure': '🌐',
+      'Linux': '🐧'
+    };
+    return icons[category] || '📚'; // Default book icon
+  };
 
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        {/* Search Section */}
-        <section className="mb-8">
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-xl">
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 h-1 bg-gray-200 w-full z-30">
+        <div 
+          className="h-full bg-blue-600 transition-all duration-300"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
+      {/* Sticky Search Bar - Adjusted for navbar */}
+      <div className="sticky top-16 bg-white border-b border-gray-200 z-20">
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            <h1 className="text-md sm:text-lg md:text-3xl font-semibold text-gray-900">
+              {timeBasedGreeting()}
+            </h1>
+            <div className="relative w-[55%]">
               <input
                 type="text"
-                placeholder="Search courses by title, instructor, or category..."
+                placeholder="Search courses..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-2 pl-10 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-lg border border-gray-300 py-2 pl-4 pr-10 text-base focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
-              <svg
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
+              <button className="absolute right-3 top-2.5 text-gray-500">
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
+      {/* Main Content - Adjusted for navbar height */}
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" style={{ paddingTop: '6rem' }}>
         {hasResults ? (
-          // Category Sections
-          categories.map((category) => {
-            const categoryCourses = coursesByCategory[category];
-            if (categoryCourses.length === 0) return null;
-
-            return (
-              <section key={category} className="mb-12">
-                <div className="flex justify-between items-center mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-900">{category}</h2>
-                  <Link 
-                    to={`/courses/category/${category}`} 
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition duration-300"
+          categories.map((category) => (
+            coursesByCategory[category] && (
+              <motion.section 
+                key={category}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mb-12"
+              >
+                {/* Category Header */}
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <h2 className="text-xl font-semibold text-gray-900">
+                      {category} Courses
+                    </h2>
+                    <span className="text-gray-500">{getCategoryIcon(category)}</span>
+                  </div>
+                  <Link
+                    to={`/courses/category/${category}`}
+                    className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
                   >
-                    Explore More
+                    <span className="mr-2">Explore All</span>
+                    <svg 
+                      className="w-4 h-4" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 5l7 7-7 7M5 5l7 7-7 7"
+                      />
+                    </svg>
                   </Link>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  ">
-                  {categoryCourses.slice(0, 3).map((course) => (
-                    <Link key={course.id} to={`/courses/${course.title}`} className="block">
-                      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                        <img
-                          src={course.thumbnail || "/placeholder.svg"}
-                          alt={`${course.title} thumbnail`}
-                          className="w-full h-48 object-cover"
-                        />
-                        <div className="p-4">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-2">{course.title}</h3>
-                          <p className="text-sm text-gray-600 mb-2">{course.instructor}</p>
-                          <div className="flex justify-between items-center">
-                            <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                              {course.category}
-                            </span>
-                            <span className="text-sm text-gray-500">{course.enrolled} enrolled</span>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
+
+                {/* Course Grid */}
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {coursesByCategory[category].courses.map((course) => (
+                    <CourseCard key={course.id} course={course} />
                   ))}
                 </div>
-              </section>
-            );
-          })
+                {/* Explore More Footer */}
+                <div className="mt-4 text-right">
+                  <Link
+                    to={`/courses/category/${category}`}
+                    className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  >
+                    Showing {coursesByCategory[category].courses.length} of {coursesByCategory[category].total} courses
+                    <svg 
+                      className="w-4 h-4 ml-1" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.section>
+            )
+          ))
         ) : (
-          <div className="text-center py-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">No courses found</h2>
-            <p className="text-gray-600">
-              We couldn't find any courses matching your search. Try adjusting your search terms or browse our categories below.
-            </p>
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {categories.map((category) => (
-                <Link
-                  key={category}
-                  to={`/courses/category/${category}`}
-                  className="bg-white hover:bg-gray-50 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow transition duration-300"
-                >
-                  {category}
-                </Link>
-              ))}
+          <motion.div 
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            className="py-12 text-center"
+          >
+            <div className="mx-auto max-w-2xl">
+              <h2 className="mb-4 text-2xl font-semibold text-gray-900">
+                No courses found
+              </h2>
+              <p className="mb-8 text-gray-600">
+                Try searching for another term or browse our categories:
+              </p>
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                {categories.map((category) => (
+                  <motion.div 
+                    whileHover={{ y: -2 }}
+                    key={category}
+                    className="p-3 bg-white rounded-lg border border-gray-200 hover:border-blue-300 transition-colors"
+                  >
+                    <Link
+                      to={`/courses/category/${category}`}
+                      className="block text-gray-700"
+                    >
+                      <div className="mb-1 text-lg">
+                        {getCategoryIcon(category)}
+                      </div>
+                      <span className="text-sm font-medium">{category}</span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         )}
+
+        {/* Scroll to Top Button */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <svg 
+            className="h-5 w-5" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 15l7-7 7 7"
+            />
+          </svg>
+        </motion.button>
       </main>
     </div>
   );
 };
 
 export default CourseList;
-

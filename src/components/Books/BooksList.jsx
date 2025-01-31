@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../../context/appContext';
+import { AppContext } from '../../context/AppContext';
 
 const BooksList = () => {
   const { books } = useContext(AppContext);  // Fetching books from context

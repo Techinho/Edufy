@@ -10,7 +10,7 @@ export const iconimg =icon
       level: 'Beginner',
       playlistId: 'PLSsAz5wf2lkK_ekd0J__44KG6QoXetZza', // Updated playlist ID
       enrolled: 50,
-      videoCount: 6,
+      Hours: 6,
       thumbnail: 'https://img.youtube.com/vi/MHn66JJH5zs/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Frontend',
@@ -25,7 +25,7 @@ export const iconimg =icon
       level: 'Beginner to Advanced',
       playlistId: 'PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv', // Updated playlist ID
       enrolled: 85,
-      videoCount: 38,
+      Hours: 8,
       thumbnail: 'https://img.youtube.com/vi/Ihy0QziLDf0/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Programming Languages',
@@ -40,7 +40,7 @@ export const iconimg =icon
       level: 'Beginner to Advanced', 
       playlistId: 'PLknwEmKsW8OuTqUDaFRBiAViDZ5uI3VcE', // Updated playlist ID
       enrolled: 85,
-      videoCount: 38,
+      Hours: 12,
       thumbnail: 'https://img.youtube.com/vi/PWuTLTFMtYw/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Programming Languages',
@@ -55,7 +55,7 @@ export const iconimg =icon
       level: 'intermediaire', 
       playlistId: 'PLm_sigBWSRY3FPx6aEMVzyx0d9y-IDWvF', // Updated playlist ID
       enrolled: 85,
-      videoCount: 38,
+      Hours: 3,
       thumbnail: 'https://img.youtube.com/vi/CqgUaY8z3Rg/sddefault.jpg',
       category: 'Web Development',
       subcategory: 'Programming Languages',
@@ -70,7 +70,7 @@ export const iconimg =icon
       level: 'Beginner',
       playlistId: 'PLAXnLdrLnQpQa83vHV2Cbj4BRiQakmJuc', // Updated playlist ID
       enrolled: 75,
-      videoCount: 11,
+      Hours: 10,
       thumbnail: 'https://img.youtube.com/vi/_uQrJ0TkZlc/sddefault.jpg',
       category: 'Programming',
       subcategory: 'Backend',

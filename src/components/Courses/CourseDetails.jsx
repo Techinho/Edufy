@@ -1,14 +1,14 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { AppContext } from '../../context/appContext';
+import { AppContext } from '../../context/AppContext';
 import VideoPlaylist from './VideoPlaylist';
 import NotFound from '../../pages/NotFound';
 import Loader from '../Loader';
 
 const CourseDetails = () => {
   const { courses, fetchVideosFromPlaylist, videos,isLoading } = useContext(AppContext);
-  const { title } = useParams();
-  const course = courses.find((course) => course.title === title);
+  const { id } = useParams();
+  const course = courses.find((course) => course.id === parseInt(id));
 
   useEffect(() => {
     if (course?.playlistId) {
@@ -68,7 +68,7 @@ const CourseDetails = () => {
                 <p className="text-sm text-gray-600 mt-1">{similarCourse.category}</p>
                 <button
                   className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-600 transition"
-                  onClick={() => window.location.href = `/courses/${similarCourse.title}`}
+                  onClick={() => window.location.href = `/courses/${similarCourse.id}`}
                 >
                   View Details
                 </button>

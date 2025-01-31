@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { AppContext } from '../../context/appContext';
+import { AppContext } from '../../context/AppContext';
 
 const BookDetails = () => {
   const { books} = useContext(AppContext);
