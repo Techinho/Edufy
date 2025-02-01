@@ -5,7 +5,7 @@ import CourseCard from './CourseCard';
 import { motion } from 'framer-motion';
 
 const CourseList = () => {
-  const { courses } = useContext(AppContext);
+  const { courses,getCategoryIcon } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -46,29 +46,7 @@ const CourseList = () => {
 
   const hasResults = filteredCourses.length > 0;
 
-  // Professional category icons
-  const getCategoryIcon = (category) => {
-    const icons = {
-      'Web Development': '👨💻',
-      'Programming': '⌨️',
-      'Computer Science': '🧠',
-      'Data Science': '📊',
-      'Cybersecurity': '🛡️',
-      'Cloud Computing': '☁️',
-      'Operating Systems': '🖥️',
-      'Mobile Development': '📱',
-      'Artificial Intelligence': '🤖',
-      'Frontend': '🖼️',
-      'Backend': '⚙️',
-      'Algorithms': '🔢',
-      'Machine Learning': '🤖',
-      'Databases': '🗄️',
-      'Network Security': '🔒',
-      'Infrastructure': '🌐',
-      'Linux': '🐧'
-    };
-    return icons[category] || '📚'; // Default book icon
-  };
+  
 
   return (
     <div className="min-h-screen bg-gray-50">

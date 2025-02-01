@@ -15,7 +15,7 @@ const AppContextProvider = (props) => {
           params: {
             part: "snippet",
             playlistId: playlistId,
-            key: "AIzaSyAwZnyy5arkw1D9InRU4G0H-iehW11CZWw",
+            key: "AIzaSyCNYtyxRia40Re9bPJJCvLz-iLikGv9L9w",
             maxResults: 50,
           },
         }
@@ -45,11 +45,35 @@ const AppContextProvider = (props) => {
     }
   };
   
+  // Professional category icons
+  const getCategoryIcon = (category) => {
+    const icons = {
+      'Web Development': '👨💻',
+      'Programming': '⌨️',
+      'Computer Science': '🧠',
+      'Data Science': '📊',
+      'Cybersecurity': '🛡️',
+      'Cloud Computing': '☁️',
+      'Operating Systems': '🖥️',
+      'Mobile Development': '📱',
+      'Artificial Intelligence': '🤖',
+      'Frontend': '🖼️',
+      'Backend': '⚙️',
+      'Algorithms': '🔢',
+      'Machine Learning': '🤖',
+      'Databases': '🗄️',
+      'Network Security': '🔒',
+      'Infrastructure': '🌐',
+      'Linux': '🐧'
+    };
+    return icons[category] || '📚'; // Default book icon
+  };
+
   const value = {
     courses,
     videos, // Allow global access to fetched videos
     fetchVideosFromPlaylist,
-    faqs ,isLoading,books// Provide the fetch function
+    faqs ,isLoading,books,getCategoryIcon// Provide the fetch function
   };
 
   return <AppContext.Provider value={value}>{props.children}</AppContext.Provider>;
