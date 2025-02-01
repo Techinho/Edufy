@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../context/appContext';
 import BookCard from './BookCard';
 import { motion } from 'framer-motion';
 

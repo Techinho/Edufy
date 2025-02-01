@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../context/appContext';
 import VideoPlaylist from './VideoPlaylist';
 import NotFound from '../../pages/NotFound';
 import Loader from '../Loader';

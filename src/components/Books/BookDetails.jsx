@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from '../../context/appContext';
 import BookCard from './BookCard'; // Reuse the BookCard component
 
 const BookDetails = () => {

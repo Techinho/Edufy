@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { AppContext } from '../../context/AppContext'
 import CourseCard from './CourseCard' // Ensure you have this component
 import { motion } from 'framer-motion'
+import { AppContext } from '../../context/appContext'
 
 const CoursesByCategory = () => {
   const { category } = useParams()
