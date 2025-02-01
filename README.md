@@ -1,8 +1,3 @@
-# React + Vite
+**EduTech**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+EduTech is a web-based educational platform designed to facilitate learning through interactive courses, resource sharing, and student-teacher collaboration. This project aims to provide an efficient and user-friendly experience for educational institutions, trainers, and students.
