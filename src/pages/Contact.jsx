@@ -217,17 +217,17 @@ const ContactUs = () => {
             <motion.p whileHover={{ scale: 1.02 }}>
               📧 Email:{" "}
               <a href="mailto:support@example.com" className="text-blue-600 hover:underline">
-                support@example.com
+                ilyassezzaouya4@gmail.com
               </a>
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }}>
               📱 Phone:{" "}
               <a href="tel:+1234567890" className="text-blue-600 hover:underline">
-                +1 (234) 567-890
+                +212 682 146 122
               </a>
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }}>
-              📍 Address: 123 Book Street, Knowledge City
+              📍 Address: Rabat,Morocco
             </motion.p>
           </div>
         </motion.div>
