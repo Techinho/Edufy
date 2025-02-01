@@ -131,7 +131,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Total Hours:</span>
-                  <span className="font-medium">{course.hours}h</span>
+                  <span className="font-medium">{course.Hours}h</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Level:</span>

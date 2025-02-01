@@ -1,107 +1,121 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import BookCard from './BookCard'; // Reuse the BookCard component
 
 const BookDetails = () => {
-  const { books} = useContext(AppContext);
+  const { books } = useContext(AppContext);
   const { id } = useParams();
   const book = books.find((book) => book.id === parseInt(id));
 
-  // Filter similar books based on category (excluding the current book)
+  if (!book) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Book Not Found</h1>
+          <Link
+            to="/books"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            Browse All Books
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
   const similarBooks = books.filter(
     (similarBook) => similarBook.category === book.category && similarBook.id !== book.id
   );
 
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300">
+    <div className="min-h-screen bg-gray-50">
       {/* Book Header */}
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white shadow rounded-lg overflow-hidden">
-          <div className="p-6 lg:flex items-center justify-between space-x-8">
-            {/* Text Section */}
+      <div className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex flex-col lg:flex-row gap-8">
+            {/* Book Cover */}
+            <div className="lg:w-1/3">
+              <div className="rounded-lg p-4">
+                <img
+                  src={book.coverImage || '/placeholder-book.svg'}
+                  alt={book.title}
+                  className="w-full h-auto rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+
+            {/* Book Details */}
             <div className="lg:w-2/3">
-              <h1 className="text-3xl font-extrabold text-gray-900">{book.title}</h1>
-              <p className="text-sm text-gray-600 mt-2">By {book.author}</p>
-              <p className="text-gray-700 mt-4">{book.description}</p>
-              <p className="text-gray-900 mt-6 font-semibold">Details</p>
-              <div className="mt-2 space-y-2">
-                <p><strong>Category:</strong> {book.category}</p>
-                <p><strong>Pages:</strong> {book.pages}</p>
-                <p><strong>ISBN:</strong> {book.isbn}</p>
-                <p><strong>Language:</strong> {book.language}</p>
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">{book.title}</h1>
+              <p className="text-lg text-gray-600 mb-4">By {book.author}</p>
+
+              {/* Metadata */}
+              <div className="flex flex-wrap gap-4 mb-6">
+                <div className="bg-gray-100 px-4 py-2 rounded-lg">
+                  <p className="text-sm text-gray-500">Category</p>
+                  <p className="font-medium text-gray-900">{book.category}</p>
+                </div>
+                <div className="bg-gray-100 px-4 py-2 rounded-lg">
+                  <p className="text-sm text-gray-500">Pages</p>
+                  <p className="font-medium text-gray-900">{book.pages}</p>
+                </div>
+                <div className="bg-gray-100 px-4 py-2 rounded-lg">
+                  <p className="text-sm text-gray-500">Language</p>
+                  <p className="font-medium text-gray-900">{book.language}</p>
+                </div>
               </div>
 
-              {/* Link to buy/read the book */}
-              <div className="mt-6">
+              {/* Description */}
+              <p className="text-gray-700 mb-6">{book.description}</p>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 mb-8">
                 <a
                   href={book.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-indigo-500 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-600 transition"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
                 >
                   Buy or Read Book
                 </a>
+                <Link
+                  to="/books"
+                  className="bg-gray-100 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-200 transition"
+                >
+                  Back to Library
+                </Link>
               </div>
             </div>
-
-            {/* Image Section */}
-            <div className="lg:w-1/3 mt-6 lg:mt-0">
-              <img
-                src={book.coverImage || '/placeholder.svg'}
-                alt={book.title}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-
-          <div className="px-6 py-4">
-            <p className="text-lg text-gray-800">{book.article}</p>
           </div>
         </div>
       </div>
-{/* similar books */}
-<div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-  <h2 className="text-2xl font-bold text-gray-900 mb-6">Similar Books</h2>
-  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    {similarBooks.map((similarBook) => (
-      <div
-        key={similarBook.id}
-        className="bg-white rounded-lg shadow-lg flex flex-col h-full"
-      >
-        {/* Image Container */}
-        <div className="w-full h-64 flex justify-center items-center bg-white">
-          <img
-            src={similarBook.coverImage || '/placeholder.svg'}
-            alt={similarBook.title}
-            className="object-contain max-h-full max-w-full"
-          />
-        </div>
-        
-        {/* Book Info */}
-        <div className="p-4 flex flex-grow flex-col">
-          <h3 className="text-lg font-semibold text-gray-800 hover:text-indigo-600 transition-colors duration-200">
-            {similarBook.title}
-          </h3>
-          <p className="text-sm text-gray-600">By {similarBook.author}</p>
-          <p className="text-sm text-gray-600">{similarBook.category}</p>
-          
-          {/* Button */}
-          <button
-            className="mt-auto bg-indigo-500 text-white py-2 px-4 rounded-lg shadow hover:bg-indigo-600 transition"
-            onClick={() => window.location.href = `/books/${similarBook.id}`}
-          >
-            View Details
-          </button>
+
+      {/* Article Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-white rounded-lg shadow-sm p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Book</h2>
+          <div className="prose max-w-none text-gray-700">
+            {book.article}
+          </div>
         </div>
       </div>
-    ))}
-  </div>
 
-  {similarBooks.length === 0 && (
-    <p className="text-gray-600 text-center mt-6">No similar books found.</p>
-  )}
-</div>
+      {/* Similar Books Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Similar Books</h2>
+        {similarBooks.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {similarBooks.map((similarBook) => (
+              <BookCard key={similarBook.id} book={similarBook} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-8 text-gray-600">
+            <p>No similar books found in this category.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
