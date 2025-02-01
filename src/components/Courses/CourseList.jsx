@@ -37,7 +37,7 @@ const CourseList = () => {
     const categoryCourses = filteredCourses.filter(course => course.category === category);
     if (categoryCourses.length > 0) {
       acc[category] = {
-        courses: categoryCourses.slice(0, 3),
+        courses: categoryCourses.slice(0, 4),
         total: categoryCourses.length
       };
     }
@@ -94,7 +94,7 @@ const CourseList = () => {
       </div>
 
       {/* Main Content - Adjusted for navbar height */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" style={{ paddingTop: '6rem' }}>
+      <main className="mx-auto max-w-7xl px-4 pt-12 py-8 sm:px-6 lg:px-8" >
         {hasResults ? (
           categories.map((category) => (
             coursesByCategory[category] && (
@@ -134,7 +134,7 @@ const CourseList = () => {
                 </div>
 
                 {/* Course Grid */}
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {coursesByCategory[category].courses.map((course) => (
                     <CourseCard key={course.id} course={course} />
                   ))}
