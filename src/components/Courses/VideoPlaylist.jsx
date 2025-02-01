@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const VideoPlaylist = ({ videos }) => {
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [currentVideo, setCurrentVideo] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const { id } = useParams();
 
   useEffect(() => {
-    if (videos.length > 0 && !currentVideo) {
-      setCurrentVideo(videos[0]);
+    setCurrentVideo(null); // Réinitialiser avant de charger la nouvelle playlist
+  }, [id]);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      setCurrentVideo(videos[0]); // Sélectionner la première vidéo une fois la liste prête
     }
-  }, [videos, currentVideo]);
+  }, [videos]);
 
   const filteredVideos = videos.filter((video) =>
     video.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -18,18 +24,24 @@ const VideoPlaylist = ({ videos }) => {
     <div className="flex flex-col lg:flex-row gap-4 p-2 lg:p-4 ">
       {/* Video Player */}
       <div className="flex-1 bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="relative aspect-video w-full">
-          <iframe
-            src={currentVideo.url}
-            title={currentVideo.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full rounded-t-lg"
-          ></iframe>
-        </div>
-        <div className="p-4">
-          <h2 className="text-lg font-semibold text-gray-900">{currentVideo.title}</h2>
-        </div>
+        {currentVideo ? (
+          <>
+            <div className="relative aspect-video w-full">
+              <iframe
+                src={currentVideo.url}
+                title={currentVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-t-lg"
+              ></iframe>
+            </div>
+            <div className="p-4">
+              <h2 className="text-lg font-semibold text-gray-900">{currentVideo.title}</h2>
+            </div>
+          </>
+        ) : (
+          <div className="p-4 text-center text-gray-500">Chargement de la vidéo...</div>
+        )}
       </div>
 
       {/* Playlist */}
@@ -49,7 +61,7 @@ const VideoPlaylist = ({ videos }) => {
                 <li
                   key={index}
                   className={`cursor-pointer p-2 flex items-center gap-3 rounded-lg transition-transform duration-300 ease-in-out shadow-sm ${
-                    currentVideo.url === video.url
+                    currentVideo && currentVideo.url === video.url
                       ? "bg-blue-100 border-l-4 border-blue-600 scale-105"
                       : "hover:bg-gray-100"
                   }`}
