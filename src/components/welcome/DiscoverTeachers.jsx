@@ -2,14 +2,14 @@ import React from 'react'
 
 const DiscoverTeachers = () => {
   return (
-    <section id="experts" className="text-white bg-gradient-to-r from-blue-600 to-blue-800 py-16">
+    <section id="experts" className="text-white bg-gradient-to-r from-blue-600 to-blue-800 py-12 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center" data-aos="fade-down">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center" data-aos="fade-down">
             Learn from Industry Experts
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div
-              className="bg-white rounded-xl shadow-lg overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-lg shadow-md overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
               data-aos="fade-right"
             >
               <img
@@ -28,7 +28,7 @@ const DiscoverTeachers = () => {
               </div>
             </div>
             <div
-              className="bg-white rounded-xl shadow-lg overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-lg shadow-md overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
               data-aos="fade-up"
             >
               <img
@@ -47,7 +47,7 @@ const DiscoverTeachers = () => {
               </div>
             </div>
             <div
-              className="bg-white rounded-xl shadow-lg overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-lg shadow-md overflow-hidden text-gray-900 transition-transform duration-300 hover:scale-105"
               data-aos="fade-left"
             >
               <img
