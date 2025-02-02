@@ -11,19 +11,24 @@ const CourseDetails = () => {
   const { id } = useParams();
   const course = courses.find((course) => course.id === parseInt(id));
   const [isEnrolled, setIsEnrolled] = useState(false);
-  const [progress] = useState(Math.floor(Math.random() * 100));
+  // const [progress] = useState(Math.floor(Math.random() * 100));
 
   const similarCourses = courses.filter(
     (similarCourse) => 
       similarCourse.category === course?.category && 
       similarCourse.id !== course?.id
   );
+   
+ useEffect(()=>{
+  setIsEnrolled(false)
+ },[id])
 
   useEffect(() => {
+
     if (course?.playlistId) {
       fetchVideosFromPlaylist(course.playlistId);
     }
-  }, [course, fetchVideosFromPlaylist]);
+  }, [id,course, fetchVideosFromPlaylist]);
 
   if (!course) return <NotFound />;
 
@@ -45,7 +50,7 @@ const CourseDetails = () => {
                   onClick={() => setIsEnrolled(true)}
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition whitespace-nowrap"
                 >
-                  {isEnrolled ? 'Continue Learning' : 'Enroll Now (Free)'}
+                  {isEnrolled ?  "watch course" : "Enroll Now"}
                 </button>
                 <div className="text-sm text-gray-600">
                   <span className="font-medium">{course.enrolled}+</span> students enrolled
@@ -73,7 +78,7 @@ const CourseDetails = () => {
         {isEnrolled ? (
           <>
             {/* Progress Bar */}
-            <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
+            {/* <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium">Course Progress</span>
                 <span className="text-sm text-gray-600">{progress}% Complete</span>
@@ -84,7 +89,7 @@ const CourseDetails = () => {
                   style={{ width: `${progress}%` }}
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Video Content */}
             <div className="bg-gray-100 rounded-xl shadow-sm p-2">

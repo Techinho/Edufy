@@ -1,85 +1,118 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 const VideoPlaylist = ({ videos }) => {
   const [currentVideo, setCurrentVideo] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const { id } = useParams();
-
+  
+  // Better video initialization and updates handling
   useEffect(() => {
-    setCurrentVideo(null); // Réinitialiser avant de charger la nouvelle playlist
-  }, [id]);
-
-  useEffect(() => {
-    if (videos.length > 0) {
-      setCurrentVideo(videos[0]); // Sélectionner la première vidéo une fois la liste prête
+    const firstVideo = videos?.[0];
+    if (firstVideo && !currentVideo) {
+      setCurrentVideo(firstVideo);
     }
-  }, [videos]);
+  }, [videos, currentVideo]);
 
-  const filteredVideos = videos.filter((video) =>
-    video.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Safer video filtering with null checks
+  const filteredVideos = videos?.filter(video => 
+    video?.title?.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
+
+  // Handle video selection with URL validation
+  const handleVideoSelect = (video) => {
+    if (video?.url) {
+      setCurrentVideo(video);
+    }
+  };
+
+  // Extract YouTube video ID more reliably
+  const getYouTubeId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url?.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  // Fallback thumbnail URL
+  const getThumbnailUrl = (url) => {
+    const videoId = getYouTubeId(url);
+    return videoId 
+      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+      : '/placeholder-video-thumbnail.jpg';
+  };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-4 p-2 lg:p-4 ">
-      {/* Video Player */}
+    <div className="flex flex-col lg:flex-row gap-4 p-2 lg:p-4 min-h-[500px]">
+      {/* Video Player Section */}
       <div className="flex-1 bg-white rounded-lg shadow-lg overflow-hidden">
         {currentVideo ? (
-          <>
-            <div className="relative aspect-video w-full">
-              <iframe
-                src={currentVideo.url}
-                title={currentVideo.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full rounded-t-lg"
-              ></iframe>
-            </div>
+          <div className="relative aspect-video w-full">
+            <iframe
+              key={currentVideo.url} // Force re-render on video change
+              src={currentVideo.url}
+              title={currentVideo.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-t-lg"
+              loading="lazy"
+            />
             <div className="p-4">
-              <h2 className="text-lg font-semibold text-gray-900">{currentVideo.title}</h2>
+              <h2 className="text-lg font-semibold text-gray-900">
+                {currentVideo.title}
+              </h2>
             </div>
-          </>
+          </div>
         ) : (
-          <div className="p-4 text-center text-gray-500">Chargement de la vidéo...</div>
+          <div className="h-full flex items-center justify-center text-gray-500">
+            {videos.length === 0 ? "No videos available" : "Select a video"}
+          </div>
         )}
       </div>
 
-      {/* Playlist */}
+      {/* Playlist Section */}
       <div className="w-full lg:w-1/3 bg-white rounded-lg shadow-lg p-4 flex flex-col">
-        <h3 className="text-lg font-bold text-gray-900 mb-2">Playlist</h3>
-        <input
-          type="text"
-          placeholder="Search videos..."
-          className="w-full p-2 border border-gray-300 rounded-lg mb-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <div className="overflow-y-auto max-h-[50vh] custom-scrollbar pr-2">
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Playlist</h3>
+          <input
+            type="text"
+            placeholder="Search videos..."
+            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+
+        <div className="overflow-y-auto max-h-[50vh] pr-2 custom-scrollbar">
           {filteredVideos.length > 0 ? (
-            <ul className="divide-y divide-gray-200">
-              {filteredVideos.map((video, index) => (
+            <ul className="space-y-2">
+              {filteredVideos.map((video) => (
                 <li
-                  key={index}
-                  className={`cursor-pointer p-2 flex items-center gap-3 rounded-lg transition-transform duration-300 ease-in-out shadow-sm ${
-                    currentVideo && currentVideo.url === video.url
-                      ? "bg-blue-100 border-l-4 border-blue-600 scale-105"
-                      : "hover:bg-gray-100"
+                  key={video.url}
+                  className={`cursor-pointer p-2 flex items-center gap-3 rounded-lg transition-all duration-300 ${
+                    currentVideo?.url === video.url
+                      ? "bg-blue-50 border-l-4 border-blue-600"
+                      : "hover:bg-gray-50"
                   }`}
-                  onClick={() => setCurrentVideo(video)}
+                  onClick={() => handleVideoSelect(video)}
                 >
-                  <div className="w-20 h-12 bg-gray-300 rounded overflow-hidden shadow-md border border-gray-200 flex-shrink-0">
+                  <div className="w-20 h-12 bg-gray-100 rounded overflow-hidden shadow-sm flex-shrink-0">
                     <img
-                      src={`https://img.youtube.com/vi/${video.url.split("/").pop()}/mqdefault.jpg`}
+                      src={getThumbnailUrl(video.url)}
                       alt={video.title}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = '/placeholder-video-thumbnail.jpg';
+                      }}
                     />
                   </div>
-                  <h4 className="text-sm font-semibold text-gray-800 line-clamp-2">{video.title}</h4>
+                  <h4 className="text-sm font-medium text-gray-800 line-clamp-2">
+                    {video.title}
+                  </h4>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-gray-500">No videos found.</p>
+            <div className="text-center p-4 text-gray-500">
+              {videos.length === 0 ? "No videos added yet" : "No matches found"}
+            </div>
           )}
         </div>
       </div>
