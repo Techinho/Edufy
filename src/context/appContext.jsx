@@ -15,7 +15,7 @@ const AppContextProvider = (props) => {
       const response = await axios.get(
         "https://www.googleapis.com/youtube/v3/playlistItems",
         {
-          params: {
+          params : {
             part: "snippet",
             playlistId: playlistId,
             key: API_KEY,
