@@ -216,13 +216,13 @@ const ContactUs = () => {
           <div className="space-y-2 text-gray-600">
             <motion.p whileHover={{ scale: 1.02 }}>
               📧 Email:{" "}
-              <a href="mailto:support@example.com" className="text-blue-600 hover:underline">
+              <a href="mailto:ilyassezzaouya4@gmail.com" className="text-blue-600 hover:underline">
                 ilyassezzaouya4@gmail.com
               </a>
             </motion.p>
             <motion.p whileHover={{ scale: 1.02 }}>
               📱 Phone:{" "}
-              <a href="tel:+1234567890" className="text-blue-600 hover:underline">
+              <a href="tel:+212682146122" className="text-blue-600 hover:underline">
                 +212 682 146 122
               </a>
             </motion.p>

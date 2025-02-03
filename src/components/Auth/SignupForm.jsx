@@ -11,8 +11,6 @@ const SignupForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement signup logic here
-    console.log('Signup:', name, email, password, confPassword);
     navigate('/');
   };
 
