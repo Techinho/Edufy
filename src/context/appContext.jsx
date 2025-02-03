@@ -4,7 +4,10 @@ import axios from 'axios';
 
 export const AppContext = createContext();
 
+
 const AppContextProvider = (props) => {
+  const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+
   const [isLoading,setIsLoading] = useState(true);
   const [videos, setVideos] = useState([]);
   const fetchVideosFromPlaylist = async (playlistId) => {
@@ -15,7 +18,7 @@ const AppContextProvider = (props) => {
           params: {
             part: "snippet",
             playlistId: playlistId,
-            key: "AIzaSyCNYtyxRia40Re9bPJJCvLz-iLikGv9L9w",
+            key: API_KEY,
             maxResults: 50,
           },
         }

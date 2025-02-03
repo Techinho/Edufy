@@ -128,10 +128,10 @@ export const iconimg =icon
       description: 'Learn the basics of cybersecurity, including hacking and security tools.',
       duration: '4 weeks',
       level: 'Beginner',
-      playlistId: 'PLIFyRwBY_4bRL5d_PW1dJZCbyvSNZC9BI', // Updated playlist ID
+      playlistId: 'PLZmPGUyBFvUrSqjVVwA0NHaxQxvqa-Pej', // Updated playlist ID
       enrolled: 45,
       videoCount: 8,
-      thumbnail: 'https://img.youtube.com/vi/HhfrA1_qpZ0/sddefault.jpg',
+      thumbnail: 'https://img.youtube.com/vi/992xydXkZnw/sddefault.jpg',
       category: 'Cybersecurity',
       subcategory: 'Network Security',
       language: 'English',
@@ -143,10 +143,10 @@ export const iconimg =icon
       description: 'Prepare for AWS certification with detailed explanations and projects.',
       duration: '10 weeks',
       level: 'Intermediate to Advanced',
-      playlistId: 'PLWKjhJtqVAblcmCsKDbDAsfZA2JZvV8iI', // Updated playlist ID
+      playlistId: 'PL8DSonqBNdRpVZj2-fXQg0kOkTbvaCEUK', // Updated playlist ID
       enrolled: 35,
       videoCount: 22,
-      thumbnail: 'https://img.youtube.com/vi/IuFZGEuqV9s/sddefault.jpg',
+      thumbnail: 'https://img.youtube.com/vi/Q503uJCwEuU/sddefault.jpg',
       category: 'Cloud Computing',
       subcategory: 'Infrastructure',
       language: 'English',
