@@ -278,7 +278,6 @@ export const iconimg =icon
       answer: "We offer various support options including course forums, email support, and live Q&A sessions with instructors for complex topics."
     }
   ];
-  
   export const books = [
     {
       id: 1,

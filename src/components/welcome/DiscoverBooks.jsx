@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const DiscoverBooks = () => {
   return (
-    <section id="expand-knowledge" className="text-gray-900 bg-white py-16">
+    <section id="expand-knowledge" className="text-gray-900 bg-gray-50 py-16">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-center" data-aos="fade-down">
         Expand Your Knowledge
