@@ -78,7 +78,7 @@ const CourseDetails = () => {
         {isEnrolled ? (
           <>
             {/* Progress Bar */}
-            <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
+            {/* <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium">Course Progress</span>
                 <span className="text-sm text-gray-600">{progress}% Complete</span>
@@ -89,7 +89,7 @@ const CourseDetails = () => {
                   style={{ width: `${progress}%` }}
                 />
               </div>
-            </div>
+            </div> */}
 
             {/* Video Content */}
             <div className="bg-gray-100 rounded-xl shadow-sm p-2">
