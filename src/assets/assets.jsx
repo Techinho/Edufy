@@ -255,6 +255,69 @@ export const iconimg =icon
       subcategory: 'Frontend',
       language: 'Arabic',
     },
+    {
+      id: 18,
+      title: 'كورس لارافيل 11 من الصفر للمبتدئين | Course laravel 11',
+      instructor: 'Mohamed Qatish | محمد قطيش',
+      description: "What is Laravel? Why is it popular among developers?The features of Laravel that make building robust applications easier.What is an API? How does it work theoretically and practically?Finally, I’ll give you essential tips on what you need to know before we start coding in the course.",
+      duration: '7 weeks',
+      level: 'Beginner',
+      playlistId: 'PLmhb7ed0Oj8mV7gsjxtKZqNh_uqnbuEpd', // Updated playlist ID
+      enrolled: 55,
+      videoCount: 10,
+      thumbnail: 'https://img.youtube.com/vi/6Uf6ybu3W2g/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Backend',
+      language: 'Arabic',
+    },
+    {
+      id: 19,
+      title: 'كورس لارافيل 11 - اخر تحديث - laravel 11 course',
+      instructor: 'شباب المستقبل للالعاب و التقنية',
+      description: `
+اهلا بكم في مقدمة كورس لارافيل 11 وهو اخر تحديث صدر في 2024 سوف نقوم بشرح في هذا الكورس كل شئ يخص laravel 11 مع بعض المشاريع الجديدة 
+1- file and folder structure
+2- change config
+3- define routes
+4- model and migrations
+5- factories and seeders
+6- generate controllers
+7- crud operations
+8- layouts and views
+9- components
+10- add registration and login
+11- validate data and save
+12- sessions 
+13- explain laravel 10 vs laravel 11
+14- project 1
+15- project 2 `,
+      duration: '7 weeks',
+      level: 'Beginner',
+      playlistId: 'PL0qv-4DrdDvKpQsXwo7EmQyfgKZ13w1ei', // Updated playlist ID
+      enrolled: 55,
+      videoCount: 10,
+      thumbnail: 'https://img.youtube.com/vi/9lculG4V7LQ/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Backend',
+      language: 'Arabic',
+    },
+    {
+      id: 20,
+      title: '30 Days to Learn Laravel',
+      instructor: 'Laracasts',
+      description: ` Laravel is an incredible and mature PHP framework that has sky-rocketed in popularity since its initial introduction back in 2012. I'm happy to say that I've been a user and advocate for the framework since the beginning. I'd love to show you the ropes if you're willing! Together, we'll review each piece of the framework, and wrap up by building a Job Board platform where users can post and apply to job listings. Ready to hit the road?
+
+I would love to show you everything you need to know about building web apps with Laravel. The first step is to get your tooling in order. Let's go! `,
+      duration: '30 Days',
+      level: 'Beginner',
+      playlistId: ' PL3VM-unCzF8hy47mt9-chowaHNjfkuEVz', // Updated playlist ID
+      enrolled: 55,
+      videoCount: 10,
+      thumbnail: 'https://img.youtube.com/vi/1NjOWtQ7S2o/sddefault.jpg',
+      category: 'Web Development',
+      subcategory: 'Backend',
+      language: 'english',
+    },
   ];
   export const faqs = [
     {
