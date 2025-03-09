@@ -19,7 +19,7 @@ const Hero = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          Welcome to TechEdu
+          Welcome to EDUFY
         </h1>
         <p className="text-lg sm:text-xl mb-3 sm:mb-4" data-aos="fade-up" data-aos-delay="400">
           Empowering Tech Enthusiasts with Free World-Class Education
