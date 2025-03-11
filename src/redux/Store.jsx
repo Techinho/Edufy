@@ -1,7 +1,11 @@
 // store.js
-import { createStore } from 'redux';
-import assignmentReducer from './reducers/reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import assignmentReducer from './reducers/assignmentSlice';
 
-const Store = createStore(assignmentReducer);
+const store = configureStore({
+  reducer: {
+    assignments: assignmentReducer
+  }
+});
 
-export default Store;
+export default store;
