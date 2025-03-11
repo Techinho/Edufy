@@ -1,12 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteAssignment, toggleAssignmentCompleted } from '../../redux/actions/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteAssignment, toggleAssignmentCompleted } from '../../redux/reducers/assignmentSlice';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AssignmentList = () => {
-  const assignments = useSelector((state) => state.assignments);
+  const assignments = useSelector((state) => state.assignments.assignments);
   const dispatch = useDispatch();
+  console.log(assignments);
 
   const handleDelete = (id) => {
     dispatch(deleteAssignment(id))

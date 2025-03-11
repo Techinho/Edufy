@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addAssignment, updateAssignment } from '../../redux/actions/actions';
+import { addAssignment, updateAssignment } from '../../redux/reducers/assignmentSlice';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../../context/appContext';
 
@@ -14,7 +14,7 @@ const AssignmentForm = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { courses } = useContext(AppContext)  
-  const assignments = useSelector((state) => state.assignments);
+  const assignments = useSelector((state) => state.assignments.assignments);
 
 
   useEffect(() => {
