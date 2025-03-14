@@ -1,111 +1,164 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-const DiscoverCourses = () => {
+import { motion } from "framer-motion"
+import { ArrowRight, Code, Database, Globe, Lock, Server, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+
+export default function DiscoverCourses() {
   const categories = [
     {
       title: "Artificial Intelligence",
       description: "Master AI, Machine Learning, and Deep Learning.",
-      image: "https://source.unsplash.com/featured/400x300/?ai,neuralnetwork",
+      icon: Sparkles,
+      color: "bg-blue-600",
+      trending: true,
     },
     {
       title: "Cybersecurity",
       description: "Protect systems and networks from cyber threats.",
-      image: "https://source.unsplash.com/featured/400x300/?security,encryption",
+      icon: Lock,
+      color: "bg-blue-700",
+      trending: true,
     },
     {
       title: "Cloud Computing",
       description: "Learn cloud platforms and scalable architectures.",
-      image: "https://source.unsplash.com/featured/400x300/?cloud,datacenter",
+      icon: Server,
+      color: "bg-blue-800",
+      trending: false,
     },
     {
       title: "Web Development",
       description: "Become a full-stack web developer.",
-      image: "https://source.unsplash.com/featured/400x300/?webdevelopment,coding",
+      icon: Globe,
+      color: "bg-blue-900",
+      trending: true,
     },
     {
       title: "Mobile Development",
       description: "Create cross-platform mobile apps.",
-      image: "https://source.unsplash.com/featured/400x300/?mobileapp,programming",
+      icon: Code,
+      color: "bg-blue-800",
+      trending: false,
     },
     {
       title: "Data Science",
       description: "Analyze and visualize data effectively.",
-      image: "https://source.unsplash.com/featured/400x300/?datascience,analytics",
+      icon: Database,
+      color: "bg-blue-700",
+      trending: true,
     },
-  ];
+  ]
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  }
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white py-20 px-6">
-      <div className="max-w-7xl w-full text-center mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl font-bold mb-6 text-gray-900"
-        >
-          Explore Cutting-edge Course Categories
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-xl text-gray-600 max-w-2xl mx-auto"
-        >
-          Dive into our professionally curated curriculum designed to propel your tech career forward
-        </motion.p>
-      </div>
+    <section className="py-20 bg-black relative overflow-hidden w-full">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-grid z-0" />
+      <div className="absolute inset-0 noise-bg z-0" />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {categories.map((category, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-            className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-out overflow-hidden"
-          >
-            <div className="relative h-52 overflow-hidden">
-              <img 
-                src={category.image} 
-                alt={category.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
-            </div>
-            
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">{category.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{category.description}</p>
-            </div>
-
-            <div className="absolute top-4 right-4">
-              <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-900">
-                Trending
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
+      {/* Animated gradient circles */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        <Link
-          to="/courses"
-          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-        >
-          <span className="mr-3">Browse All Courses</span>
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </Link>
-      </motion.div>
-    </section>
-  );
-};
+        className="absolute top-40 right-20 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.2, 0.1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "reverse",
+        }}
+      />
 
-export default DiscoverCourses;
+      <div className="container relative z-10 px-4 md:px-6 mx-auto">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
+              Explore <span className="text-gradient">Cutting-edge</span> Course Categories
+            </h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Dive into our professionally curated curriculum designed to propel your tech career forward
+            </p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {categories.map((category, index) => (
+            <motion.div key={index} variants={item} className="group">
+              <div className="relative h-full overflow-hidden rounded-xl bg-blue-950/30 backdrop-blur-sm border border-blue-500/20 transition-all duration-300 hover:border-blue-500/40 hover:bg-blue-950/40">
+                <div className="p-8">
+                  <div className={`w-14 h-14 rounded-lg ${category.color} flex items-center justify-center mb-6`}>
+                    <category.icon className="h-7 w-7 text-white" />
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-2 text-white">{category.title}</h3>
+                  <p className="text-white/70 mb-6">{category.description}</p>
+
+                  <Link to={`/courses/category/${category.title}`}className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors cursor-pointer">
+                    <span>Explore courses</span>
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+
+                {category.trending && (
+                  <div className="absolute top-4 right-4">
+                    <div className="flex items-center gap-1 bg-blue-600/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-white">
+                      <Sparkles className="h-3 w-3" />
+                      <span>Trending</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Decorative corner */}
+                <div className="absolute -bottom-6 -right-6 w-12 h-12 bg-blue-500/20 rounded-full blur-xl" />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Button asChild size="lg" className="rounded-md h-12 sm:h-14 px-6 sm:px-8 bg-blue-600 hover:bg-blue-700 text-white">
+              <Link to="/courses" className="flex items-center gap-2">
+                Browse All Courses
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
