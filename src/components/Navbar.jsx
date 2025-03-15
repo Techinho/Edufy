@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom" // Ensure you're importing Link from react-router-dom
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { BookOpen, Code, Contact, Home, Menu, X, ChevronDown, GraduationCap, ExternalLink } from "lucide-react"
@@ -36,27 +36,25 @@ export default function Navbar() {
   }
 
   const navItems = [
-    { name: "Home", href: "/", icon: Home },
+    { name: "Home", to: "/", icon: Home },
     {
       name: "Courses",
-      href: "/courses",
+      to: "/courses",
       icon: GraduationCap,
       dropdown: [
-        { name: "Web Development", href: "/courses/category/Web Development" },
-        { name: "Cybersecurity", href: "/courses/category/Cybersecurity" },
-        { name: "Data Science", href: "/courses/category/Data Science" },
-        { name: "Mobile Development", href: "/courses/category/Mobile Development" },
-        { name: "All Courses", href: "/courses" },
+        { name: "Web Development", to: "/courses/category/Web Development" },
+        { name: "Cybersecurity", to: "/courses/category/Cybersecurity" },
+        { name: "Data Science", to: "/courses/category/Data Science" },
+        { name: "Mobile Development", to: "/courses/category/Mobile Development" },
+        { name: "All Courses", to: "/courses" },
       ],
     },
-    { name: "Books", href: "/books", icon: BookOpen },
-    { name: "Contact", href: "/contact", icon: Contact },
+    { name: "Books", to: "/books", icon: BookOpen },
+    { name: "Contact", to: "/contact", icon: Contact },
   ]
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-black `}
-    >
+    <header className={`sticky top-0 z-50 bg-black`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2 z-10">
@@ -84,7 +82,7 @@ export default function Navbar() {
                   </button>
                 ) : (
                   <Link
-                    to={item.href}
+                    to={item.to} // Corrected `to` instead of `href`
                     className="flex items-center gap-1 px-4 py-2 text-white/80 hover:text-white transition-colors"
                   >
                     <item.icon className="h-4 w-4" />
@@ -106,7 +104,7 @@ export default function Navbar() {
                           {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
-                              to={dropdownItem.href}
+                              to={dropdownItem.to} // Corrected `to` instead of `href`
                               className=" px-4 py-2 text-sm text-gray-800 hover:bg-blue-50 hover:text-blue-600 flex items-center gap-2"
                               onClick={closeMenu}
                             >
@@ -125,7 +123,7 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-md">
-              <Link href="/signup">Get Started</Link>
+              <Link to="/signup">Get Started</Link> {/* Corrected `to` instead of `href` */}
             </Button>
           </div>
 
@@ -175,7 +173,7 @@ export default function Navbar() {
                               {item.dropdown.map((dropdownItem) => (
                                 <Link
                                   key={dropdownItem.name}
-                                  href={dropdownItem.href}
+                                  to={dropdownItem.to} // Corrected `to` instead of `href`
                                   className="flex items-center gap-2 px-4 py-2 text-sm text-white/70 hover:text-white transition-colors"
                                   onClick={closeMenu}
                                 >
@@ -189,7 +187,7 @@ export default function Navbar() {
                       </>
                     ) : (
                       <Link
-                        href={item.href}
+                        to={item.to} // Corrected `to` instead of `href`
                         className="flex items-center gap-3 px-4 py-3 text-white/80 hover:text-white hover:bg-blue-900/20 rounded-md transition-colors"
                         onClick={closeMenu}
                       >
@@ -202,7 +200,7 @@ export default function Navbar() {
 
                 <div className="mt-4 pt-4 border-t border-blue-900/30">
                   <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-md h-12">
-                    <Link href="/signup" className="w-full flex items-center justify-center" onClick={closeMenu}>
+                    <Link to="/signup" className="w-full flex items-center justify-center" onClick={closeMenu}> {/* Corrected `to` instead of `href` */}
                       Get Started
                     </Link>
                   </Button>
