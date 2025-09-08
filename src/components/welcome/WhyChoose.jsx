@@ -122,7 +122,7 @@ export default function WhyChoose() {
           ))}
         </motion.div>
 
-        {/* Stats section */}
+        {/* Stats section
         <motion.div
           className="mt-16 md:mt-24 p-6 md:p-10 bg-white rounded-2xl shadow-xl border border-gray-100"
           initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ export default function WhyChoose() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
         
         {/* Call to action */}
         <motion.div 
