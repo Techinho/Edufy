@@ -29,45 +29,53 @@ const BookDetails = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-grid opacity-10 z-0" />
+      <div className="absolute inset-0 noise-bg z-0" />
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-blue-600/10 blur-3xl opacity-70" />
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-blue-600/10 blur-3xl opacity-70" />
+
       {/* Book Header */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col lg:flex-row gap-8">
+      <div className="relative bg-blue-950/30 backdrop-blur-sm border-b border-blue-900/30 z-10">
+        <div className="absolute inset-0 bg-grid opacity-10 z-0" />
+        <div className="absolute inset-0 noise-bg z-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Book Cover */}
             <div className="lg:w-1/3">
-              <div className="rounded-lg p-4">
+              <div className="rounded-xl overflow-hidden shadow-2xl border border-blue-900/50">
                 <img
                   src={book.coverImage || '/placeholder-book.svg'}
                   alt={book.title}
-                  className="w-full h-auto rounded-lg shadow-md"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
 
             {/* Book Details */}
             <div className="lg:w-2/3">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{book.title}</h1>
-              <p className="text-lg text-gray-600 mb-4">By {book.author}</p>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{book.title}</h1>
+              <p className="text-lg text-blue-400 mb-4">By {book.author}</p>
 
               {/* Metadata */}
               <div className="flex flex-wrap gap-4 mb-6">
-                <div className="bg-gray-100 px-4 py-2 rounded-lg">
-                  <p className="text-sm text-gray-500">Category</p>
-                  <p className="font-medium text-gray-900">{book.category}</p>
+                <div className="bg-blue-900/30 px-4 py-2 rounded-lg border border-blue-500/30">
+                  <p className="text-sm text-blue-400">Category</p>
+                  <p className="font-medium text-white">{book.category}</p>
                 </div>
-                <div className="bg-gray-100 px-4 py-2 rounded-lg">
-                  <p className="text-sm text-gray-500">Pages</p>
-                  <p className="font-medium text-gray-900">{book.pages}</p>
+                <div className="bg-blue-900/30 px-4 py-2 rounded-lg border border-blue-500/30">
+                  <p className="text-sm text-blue-400">Pages</p>
+                  <p className="font-medium text-white">{book.pages}</p>
                 </div>
-                <div className="bg-gray-100 px-4 py-2 rounded-lg">
-                  <p className="text-sm text-gray-500">Language</p>
-                  <p className="font-medium text-gray-900">{book.language}</p>
+                <div className="bg-blue-900/30 px-4 py-2 rounded-lg border border-blue-500/30">
+                  <p className="text-sm text-blue-400">Language</p>
+                  <p className="font-medium text-white">{book.language}</p>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-gray-700 mb-6">{book.description}</p>
+              <p className="text-white/70 mb-6">{book.description}</p>
 
               {/* Action Buttons */}
               <div className="flex gap-4 mb-8">
@@ -81,7 +89,7 @@ const BookDetails = () => {
                 </a>
                 <Link
                   to="/books"
-                  className="bg-gray-100 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-200 transition"
+                  className="bg-blue-900/30 text-blue-400 px-6 py-2 rounded-lg hover:bg-blue-800 transition border border-blue-500/30"
                 >
                   Back to Library
                 </Link>

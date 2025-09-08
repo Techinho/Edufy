@@ -455,5 +455,541 @@ I would love to show you everything you need to know about building web apps wit
       article: `Machine Learning Yearning by Andrew Ng is an insightful guide for those looking to understand how to structure machine learning projects. The book delves into best practices for developing and deploying machine learning models, helping readers avoid common pitfalls. Although the book is relatively short, it provides crucial insights into practical machine learning and is perfect for anyone looking to take their ML knowledge to the next level.`
     }
   ];
+
+  export const quizzes = [
+    {
+      id: 1,
+      title: 'React Fundamentals Quiz',
+      topic: 'React',
+      difficulty: 'Easy',
+      description: 'Test your knowledge of React basics including components, props, and state.',
+      estimatedTime: 15,
+      courseId: 1, // Related to ReactJS Crash Course
+      questions: [
+        {
+          question: 'What is JSX?',
+          options: [
+            'A JavaScript framework',
+            'A syntax extension for JavaScript',
+            'A CSS preprocessor',
+            'A database query language'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which method is used to render elements in React?',
+          options: [
+            'React.render()',
+            'ReactDOM.render()',
+            'React.createElement()',
+            'document.render()'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a React component?',
+          options: [
+            'A JavaScript function or class',
+            'A CSS class',
+            'An HTML element',
+            'A database table'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'How do you pass data to a React component?',
+          options: [
+            'Through state',
+            'Through props',
+            'Through methods',
+            'Through classes'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What hook is used to manage state in functional components?',
+          options: [
+            'useEffect',
+            'useState',
+            'useContext',
+            'useReducer'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'JavaScript ES6+ Features',
+      topic: 'JavaScript',
+      difficulty: 'Medium',
+      description: 'Explore modern JavaScript features including arrow functions, destructuring, and async/await.',
+      estimatedTime: 20,
+      courseId: 2, // Related to JavaScript tutorial
+      questions: [
+        {
+          question: 'Which of the following is the correct syntax for an arrow function?',
+          options: [
+            'function() => {}',
+            '() => {}',
+            '=> () {}',
+            'function => {}'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does the spread operator (...) do?',
+          options: [
+            'Creates a new function',
+            'Expands an array or object',
+            'Defines a variable',
+            'Imports a module'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which keyword is used to define constants in JavaScript?',
+          options: [
+            'var',
+            'let',
+            'const',
+            'static'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is destructuring in JavaScript?',
+          options: [
+            'Breaking down functions',
+            'Extracting values from arrays or objects',
+            'Removing elements from arrays',
+            'Converting strings to numbers'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does async/await help with?',
+          options: [
+            'Synchronous operations',
+            'Handling promises more elegantly',
+            'Creating functions',
+            'Defining variables'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'HTML5 Semantic Elements',
+      topic: 'HTML',
+      difficulty: 'Easy',
+      description: 'Test your understanding of HTML5 semantic elements and document structure.',
+      estimatedTime: 10,
+      questions: [
+        {
+          question: 'Which HTML5 element is used for the main content of a document?',
+          options: [
+            '<content>',
+            '<main>',
+            '<section>',
+            '<primary>'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of the <article> element?',
+          options: [
+            'To display images',
+            'To create navigation menus',
+            'To represent standalone content',
+            'To style text'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'Which element is used for navigation links?',
+          options: [
+            '<menu>',
+            '<nav>',
+            '<links>',
+            '<navigation>'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does the <aside> element represent?',
+          options: [
+            'Main content',
+            'Content aside from the main content',
+            'A sidebar only',
+            'Footer content'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'CSS Flexbox Mastery',
+      topic: 'CSS',
+      difficulty: 'Medium',
+      description: 'Master CSS Flexbox properties and layout techniques.',
+      estimatedTime: 18,
+      questions: [
+        {
+          question: 'Which property makes an element a flex container?',
+          options: [
+            'display: flex',
+            'flex: container',
+            'position: flex',
+            'layout: flex'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What does justify-content control?',
+          options: [
+            'Vertical alignment',
+            'Horizontal alignment along main axis',
+            'Text alignment',
+            'Element order'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which property controls the alignment of items along the cross axis?',
+          options: [
+            'justify-content',
+            'align-items',
+            'flex-direction',
+            'flex-wrap'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does flex-direction: column do?',
+          options: [
+            'Creates columns',
+            'Changes main axis to vertical',
+            'Aligns items horizontally',
+            'Creates a grid'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Python Data Structures',
+      topic: 'Python',
+      difficulty: 'Medium',
+      description: 'Test your knowledge of Python lists, dictionaries, sets, and tuples.',
+      estimatedTime: 25,
+      questions: [
+        {
+          question: 'Which data structure is ordered and changeable in Python?',
+          options: [
+            'Tuple',
+            'Set',
+            'List',
+            'Dictionary'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'How do you create an empty dictionary in Python?',
+          options: [
+            '[]',
+            '()',
+            '{}',
+            'dict()'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'Which method adds an item to the end of a list?',
+          options: [
+            'add()',
+            'append()',
+            'insert()',
+            'push()'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What makes a set different from a list?',
+          options: [
+            'Sets are ordered',
+            'Sets allow duplicates',
+            'Sets are unordered and unique',
+            'Sets are immutable'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'How do you access a dictionary value by key?',
+          options: [
+            'dict[key]',
+            'dict.get(key)',
+            'Both A and B',
+            'dict(key)'
+          ],
+          correctAnswer: 2
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: 'Database Fundamentals',
+      topic: 'Database',
+      difficulty: 'Easy',
+      description: 'Basic concepts of databases, SQL, and data modeling.',
+      estimatedTime: 15,
+      questions: [
+        {
+          question: 'What does SQL stand for?',
+          options: [
+            'Structured Query Language',
+            'Simple Query Language',
+            'Standard Query Language',
+            'Sequential Query Language'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'Which command is used to retrieve data from a database?',
+          options: [
+            'GET',
+            'FETCH',
+            'SELECT',
+            'RETRIEVE'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is a primary key?',
+          options: [
+            'A key that opens the database',
+            'A unique identifier for a record',
+            'The first column in a table',
+            'A password for the database'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is normalization in databases?',
+          options: [
+            'Making data normal',
+            'Organizing data to reduce redundancy',
+            'Sorting data alphabetically',
+            'Backing up data'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: 'Machine Learning Basics',
+      topic: 'Machine Learning',
+      difficulty: 'Medium',
+      description: 'Fundamental concepts of machine learning and data science.',
+      estimatedTime: 30,
+      questions: [
+        {
+          question: 'What is supervised learning?',
+          options: [
+            'Learning with a teacher present',
+            'Learning with labeled training data',
+            'Learning without any data',
+            'Learning online courses'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which algorithm is commonly used for classification?',
+          options: [
+            'Linear Regression',
+            'K-Means',
+            'Decision Tree',
+            'PCA'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is overfitting?',
+          options: [
+            'Model performs well on training data but poorly on new data',
+            'Model is too simple',
+            'Model has too few parameters',
+            'Model trains too quickly'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What is the purpose of cross-validation?',
+          options: [
+            'To validate the programmer',
+            'To assess model performance',
+            'To clean the data',
+            'To visualize results'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Cybersecurity Fundamentals',
+      topic: 'Cybersecurity',
+      difficulty: 'Medium',
+      description: 'Essential cybersecurity concepts and best practices.',
+      estimatedTime: 20,
+      questions: [
+        {
+          question: 'What is the principle of least privilege?',
+          options: [
+            'Give users minimum access needed',
+            'Give everyone admin access',
+            'Restrict all access',
+            'Give access based on seniority'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What is a firewall?',
+          options: [
+            'A wall that prevents fires',
+            'A network security device',
+            'An antivirus software',
+            'A backup system'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does encryption do?',
+          options: [
+            'Deletes data',
+            'Compresses data',
+            'Converts data to unreadable format',
+            'Copies data'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is phishing?',
+          options: [
+            'Catching fish',
+            'A type of social engineering attack',
+            'A programming technique',
+            'A database operation'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 9,
+      title: 'Cloud Computing Essentials',
+      topic: 'Cloud Computing',
+      difficulty: 'Easy',
+      description: 'Introduction to cloud computing concepts and services.',
+      estimatedTime: 15,
+      questions: [
+        {
+          question: 'What is cloud computing?',
+          options: [
+            'Computing in the sky',
+            'On-demand delivery of IT resources over the internet',
+            'A weather prediction system',
+            'A type of network cable'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which is a cloud service model?',
+          options: [
+            'SaaS',
+            'PaaS',
+            'IaaS',
+            'All of the above'
+          ],
+          correctAnswer: 3
+        },
+        {
+          question: 'What does SaaS stand for?',
+          options: [
+            'Software as a Service',
+            'System as a Service',
+            'Security as a Service',
+            'Storage as a Service'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'Which is a benefit of cloud computing?',
+          options: [
+            'Scalability',
+            'Cost efficiency',
+            'Accessibility',
+            'All of the above'
+          ],
+          correctAnswer: 3
+        }
+      ]
+    },
+    {
+      id: 10,
+      title: 'Advanced React Patterns',
+      topic: 'React',
+      difficulty: 'Hard',
+      description: 'Advanced React concepts including hooks, context, and performance optimization.',
+      estimatedTime: 25,
+      courseId: 1,
+      questions: [
+        {
+          question: 'What is the purpose of useEffect hook?',
+          options: [
+            'To manage state',
+            'To handle side effects',
+            'To create components',
+            'To style elements'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'When does useEffect run by default?',
+          options: [
+            'Only on mount',
+            'Only on unmount',
+            'After every render',
+            'Never'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is React.memo used for?',
+          options: [
+            'Memory management',
+            'Component memoization',
+            'State management',
+            'Routing'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the Context API used for?',
+          options: [
+            'Styling components',
+            'Sharing state across components',
+            'Routing',
+            'API calls'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    }
+  ];
   
   

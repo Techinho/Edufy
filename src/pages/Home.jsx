@@ -7,6 +7,7 @@ import Discovercourses from "../components/welcome/Discovercourses"
 import DiscoverTeachers from "../components/welcome/DiscoverTeachers"
 import WhyChoose from "../components/welcome/WhyChoose"
 import DiscoverBooks from "../components/welcome/DiscoverBooks"
+import DiscoverQuizzes from "../components/welcome/DiscoverQuizzes"
 import CallToAction from "../components/welcome/CallToAction"
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <WhyChoose />
         <Discovercourses />
+        <DiscoverQuizzes />
         <DiscoverTeachers />
         <DiscoverBooks />
         <Faqs />

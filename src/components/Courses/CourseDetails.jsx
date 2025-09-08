@@ -7,10 +7,11 @@ import VideoPlaylist from "./VideoPlaylist"
 import NotFound from "../../pages/NotFound"
 import Loader from "../Loader"
 import CourseCard from "./CourseCard"
+import QuizCard from "../Quizzes/QuizCard"
 import { motion } from "framer-motion"
 
 const CourseDetails = () => {
-  const { courses, fetchVideosFromPlaylist, videos, isLoading } = useContext(AppContext)
+  const { courses, fetchVideosFromPlaylist, videos, isLoading, quizzes } = useContext(AppContext)
   const { id } = useParams()
   const course = courses.find((course) => course.id === Number.parseInt(id, 10))
   const [isEnrolled, setIsEnrolled] = useState(false)
@@ -19,6 +20,11 @@ const CourseDetails = () => {
   const similarCourses = courses.filter(
     (similarCourse) => similarCourse.category === course?.category && similarCourse.id !== course?.id,
   )
+
+  // Get related quizzes for this course
+  const relatedQuizzes = quizzes.filter(
+    (quiz) => quiz.courseId === course?.id || quiz.topic.toLowerCase().includes(course?.category.toLowerCase())
+  ).slice(0, 3) // Show max 3 related quizzes
 
   useEffect(() => {
     setIsEnrolled(false)
@@ -280,6 +286,37 @@ const CourseDetails = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Related Quizzes */}
+        {relatedQuizzes.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mt-12"
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-white">
+                Test Your Knowledge
+              </h2>
+              <Link 
+                to="/quizzes" 
+                className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
+              >
+                View All Quizzes
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedQuizzes.map((quiz) => (
+                <QuizCard key={quiz.id} quiz={quiz} />
+              ))}
+            </div>
+          </motion.div>
+        )}
 
         {/* Similar Courses */}
         {similarCourses.length > 0 && (

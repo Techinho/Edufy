@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom" // Ensure you're importing Link from react-router-dom
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Code, Contact, Home, Menu, X, ChevronDown, GraduationCap, ExternalLink } from "lucide-react"
+import { BookOpen, Code, Contact, Home, Menu, X, ChevronDown, GraduationCap, ExternalLink, Brain } from "lucide-react"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -49,6 +49,7 @@ export default function Navbar() {
         { name: "All Courses", to: "/courses" },
       ],
     },
+    { name: "Quizzes", to: "/quizzes", icon: Brain },
     { name: "Books", to: "/books", icon: BookOpen },
     { name: "Contact", to: "/contact", icon: Contact },
   ]

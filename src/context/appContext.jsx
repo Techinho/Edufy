@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { courses,faqs,books } from '../assets/assets';
+import { courses,faqs,books,quizzes } from '../assets/assets';
 import axios from 'axios';
 
 export const AppContext = createContext();
@@ -76,7 +76,7 @@ const AppContextProvider = (props) => {
     courses,
     videos, // Allow global access to fetched videos
     fetchVideosFromPlaylist,
-    faqs ,isLoading,books,getCategoryIcon// Provide the fetch function
+    faqs ,isLoading,books,getCategoryIcon,quizzes// Provide the fetch function
   };
 
   return <AppContext.Provider value={value}>{props.children}</AppContext.Provider>;

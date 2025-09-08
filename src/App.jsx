@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import Courses from './pages/Courses';
+import Quizzes from './pages/Quizzes';
 import NotFound from './pages/NotFound';
 import AnalyticsChart from './components/Analytics/AnalyticsChart';
 import Students from './components/Users/Students';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/courses/*" element={<Courses/>} />
+          <Route path="/quizzes/*" element={<Quizzes/>} />
           <Route path='/books/*' element={<Books/>} />
           <Route path="/assignments/*" element={<Assignment/>} />
           <Route path="/analytics" element={<AnalyticsChart/>} />
