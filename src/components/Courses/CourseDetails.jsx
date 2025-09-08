@@ -15,7 +15,7 @@ const CourseDetails = () => {
   const { id } = useParams()
   const course = courses.find((course) => course.id === Number.parseInt(id, 10))
   const [isEnrolled, setIsEnrolled] = useState(false)
-  const [progress] = useState(Math.floor(Math.random() * 100))
+  // const [progress] = useState(Math.floor(Math.random() * 100))
 
   const similarCourses = courses.filter(
     (similarCourse) => similarCourse.category === course?.category && similarCourse.id !== course?.id,
@@ -111,7 +111,7 @@ const CourseDetails = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {isEnrolled ? (
           <>
-            {/* Progress Bar */}
+            {/* Progress Bar
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const CourseDetails = () => {
               <div className="w-full bg-blue-900/50 rounded-full h-2">
                 <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${progress}%` }} />
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Video Content */}
             <motion.div

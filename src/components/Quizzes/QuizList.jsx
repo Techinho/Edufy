@@ -89,7 +89,7 @@ const QuizList = () => {
           <div className="flex flex-col gap-4">
             {/* Title and Search */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <h1 className="text-xl sm:text-2xl font-bold text-white">
+              <h1 className="text-xl sm:text-2xl font-semibold text-white">
                 {timeBasedGreeting()}, <span className="text-blue-400">Test Your Knowledge</span>
               </h1>
               <div className="relative w-full sm:w-[60%] max-w-md">
@@ -154,7 +154,7 @@ const QuizList = () => {
               <div className="flex items-end">
                 <div className="bg-blue-950/30 backdrop-blur-sm border border-blue-900/50 rounded-lg px-4 py-2">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-blue-400">{filteredQuizzes.length}</div>
+                    <div className="text-lg font-semibold text-blue-400">{filteredQuizzes.length}</div>
                     <div className="text-xs text-white/60">Quizzes Found</div>
                   </div>
                 </div>
@@ -184,7 +184,7 @@ const QuizList = () => {
                     <div className="w-10 h-10 rounded-lg bg-blue-600/20 flex items-center justify-center text-blue-400 text-xl">
                       {getTopicIcon(topic)}
                     </div>
-                    <h2 className="text-xl font-bold text-white">
+                    <h2 className="text-xl font-semibold text-white">
                       {topic} <span className="text-blue-400">Quizzes</span>
                     </h2>
                   </div>
@@ -230,7 +230,7 @@ const QuizList = () => {
               transition={{ duration: 0.5 }}
             >
               <div className="mb-6">
-                <h2 className="text-xl font-bold text-white mb-2">
+                <h2 className="text-xl font-semibold text-white mb-2">
                   {selectedTopic !== "All" && (
                     <span className="inline-flex items-center gap-2 mb-2">
                       <span className="text-xl">{getTopicIcon(selectedTopic)}</span>
@@ -260,7 +260,7 @@ const QuizList = () => {
           >
             <div className="mx-auto max-w-2xl">
               <div className="text-6xl mb-4">🧠</div>
-              <h2 className="mb-4 text-2xl font-bold text-white">No quizzes found</h2>
+              <h2 className="mb-4 text-2xl font-semibold text-white">No quizzes found</h2>
               <p className="mb-8 text-white/70">Try adjusting your filters or search terms.</p>
               <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {topics.slice(1, 9).map((topic) => (

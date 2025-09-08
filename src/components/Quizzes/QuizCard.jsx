@@ -61,7 +61,7 @@ const QuizCard = ({ quiz }) => {
               {getTopicIcon(quiz.topic)}
             </div>
             <div>
-              <h3 className="font-semibold text-white text-lg line-clamp-2 group-hover:text-blue-300 transition-colors">
+              <h3 className="font-medium text-white text-lg line-clamp-2 group-hover:text-blue-300 transition-colors">
                 {quiz.title}
               </h3>
               <p className="text-sm text-white/60">{quiz.topic}</p>

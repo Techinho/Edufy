@@ -1,9 +1,18 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global font application */
+* {
+  font-family: 'Roboto Slab', serif;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
 
 
 /* .course:hover> :not(:hover){

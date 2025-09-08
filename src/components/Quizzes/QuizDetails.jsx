@@ -141,7 +141,7 @@ const QuizDetails = () => {
                 {getTopicIcon(quiz.topic)}
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-white mb-2">{quiz.title}</h1>
+                <h1 className="text-3xl font-semibold text-white mb-2">{quiz.title}</h1>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-sm border ${getDifficultyColor(quiz.difficulty)}`}>
                     {quiz.difficulty}
@@ -236,13 +236,13 @@ const QuizDetails = () => {
               <div className="text-6xl mb-4">
                 {score >= 80 ? '🎉' : score >= 60 ? '👍' : '📚'}
               </div>
-              <h2 className="text-3xl font-bold text-white mb-2">Quiz Completed!</h2>
+              <h2 className="text-3xl font-semibold text-white mb-2">Quiz Completed!</h2>
               <p className="text-white/70">Here are your results for "{quiz.title}"</p>
             </div>
 
             {/* Score Display */}
             <div className="bg-black/30 rounded-xl p-8 mb-8">
-              <div className={`text-6xl font-bold mb-4 ${getScoreColor(score)}`}>
+              <div className={`text-6xl font-semibold mb-4 ${getScoreColor(score)}`}>
                 {score}%
               </div>
               <div className="text-white/70 text-lg">
@@ -305,14 +305,14 @@ const QuizDetails = () => {
           <div className="bg-blue-950/30 backdrop-blur-sm border border-blue-900/50 rounded-xl p-6 mb-8">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <div>
-                <h1 className="text-xl font-bold text-white">{quiz.title}</h1>
+                <h1 className="text-xl font-semibold text-white">{quiz.title}</h1>
                 <p className="text-white/60">
                   Question {currentQuestion + 1} of {quiz.questions.length}
                 </p>
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-right">
-                  <div className="text-lg font-bold text-blue-400">{formatTime(timeLeft)}</div>
+                  <div className="text-lg font-semibold text-blue-400">{formatTime(timeLeft)}</div>
                   <div className="text-xs text-white/60">Time Left</div>
                 </div>
                 <div className="w-16 h-16 rounded-full bg-blue-600/20 flex items-center justify-center">
