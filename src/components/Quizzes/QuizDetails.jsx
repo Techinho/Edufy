@@ -128,7 +128,7 @@ const QuizDetails = () => {
     <div className="min-h-screen bg-black">
       {!isQuizStarted ? (
         // Quiz Introduction Page
-        <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-2 py-8 sm:px-4 lg:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -136,8 +136,8 @@ const QuizDetails = () => {
             className="bg-blue-950/30 backdrop-blur-sm border border-blue-900/50 rounded-xl p-8"
           >
             {/* Header */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-xl bg-blue-600/20 flex items-center justify-center text-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-14 h-14 rounded-xl bg-blue-600/20 flex items-center justify-center text-2xl">
                 {getTopicIcon(quiz.topic)}
               </div>
               <div>
@@ -154,19 +154,19 @@ const QuizDetails = () => {
             </div>
 
             {/* Description */}
-            <p className="text-white/70 text-lg mb-8">{quiz.description}</p>
+            <p className="text-white/70 text-lg mb-5">{quiz.description}</p>
 
             {/* Quiz Info */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-black/30 rounded-lg p-4 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-5">
+              <div className="bg-black/30 rounded-lg p-2 text-center">
                 <div className="text-2xl font-bold text-blue-400">{quiz.questions.length}</div>
                 <div className="text-white/60">Questions</div>
               </div>
-              <div className="bg-black/30 rounded-lg p-4 text-center">
+              <div className="bg-black/30 rounded-lg p-2 text-center">
                 <div className="text-2xl font-bold text-blue-400">{quiz.estimatedTime}</div>
                 <div className="text-white/60">Minutes</div>
               </div>
-              <div className="bg-black/30 rounded-lg p-4 text-center">
+              <div className="bg-black/30 rounded-lg p-2 text-center">
                 <div className="text-2xl font-bold text-blue-400">{Math.round(100 / quiz.questions.length)}</div>
                 <div className="text-white/60">Points per Question</div>
               </div>
@@ -174,7 +174,7 @@ const QuizDetails = () => {
 
             {/* Related Course */}
             {relatedCourse && (
-              <div className="bg-purple-950/20 border border-purple-500/30 rounded-lg p-4 mb-8">
+              <div className="bg-purple-950/20 border border-purple-500/30 rounded-lg p-3 mb-5">
                 <h3 className="text-lg font-semibold text-white mb-2">Related Course</h3>
                 <Link 
                   to={`/courses/${relatedCourse.id}`}
@@ -194,7 +194,7 @@ const QuizDetails = () => {
             )}
 
             {/* Instructions */}
-            <div className="bg-yellow-950/20 border border-yellow-500/30 rounded-lg p-4 mb-8">
+            <div className="bg-yellow-950/20 border border-yellow-500/30 rounded-lg p-3 mb-5">
               <h3 className="text-lg font-semibold text-white mb-3">Instructions</h3>
               <ul className="text-white/70 space-y-2">
                 <li>• Choose the best answer for each question</li>
@@ -209,13 +209,13 @@ const QuizDetails = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={startQuiz}
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all duration-200 hover:scale-105"
+                className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all duration-200 hover:scale-105"
               >
                 Start Quiz
               </button>
               <Link
                 to="/quizzes"
-                className="px-8 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold transition-all duration-200 text-center"
+                className="px-6 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold transition-all duration-200 text-center"
               >
                 Back to Quizzes
               </Link>
