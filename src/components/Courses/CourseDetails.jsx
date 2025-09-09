@@ -15,7 +15,7 @@ const CourseDetails = () => {
   const { id } = useParams()
   const course = courses.find((course) => course.id === Number.parseInt(id, 10))
   const [isEnrolled, setIsEnrolled] = useState(false)
-  // const [progress] = useState(Math.floor(Math.random() * 100))
+  const [progress] = useState(Math.floor(Math.random() * 100))
 
   const similarCourses = courses.filter(
     (similarCourse) => similarCourse.category === course?.category && similarCourse.id !== course?.id,
