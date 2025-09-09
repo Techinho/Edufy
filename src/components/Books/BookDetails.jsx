@@ -29,7 +29,7 @@ const BookDetails = () => {
   );
 
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-black ">
       {/* Background elements */}
       <div className="absolute inset-0 bg-grid opacity-10 z-0" />
       <div className="absolute inset-0 noise-bg z-0" />
@@ -100,10 +100,10 @@ const BookDetails = () => {
       </div>
 
       {/* Article Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-white rounded-lg shadow-sm p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Book</h2>
-          <div className="prose max-w-none text-gray-700">
+          <div className="text-gray-700">
             {book.article}
           </div>
         </div>
