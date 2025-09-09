@@ -30,6 +30,14 @@ export default function Navbar() {
     }
   }
 
+  const handleMouseEnter = (name) => {
+    setActiveDropdown(name)
+  }
+
+  const handleMouseLeave = () => {
+    setActiveDropdown(null)
+  }
+
   const closeMenu = () => {
     setIsOpen(false)
     setActiveDropdown(null)
@@ -69,10 +77,14 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <div key={item.name} className="relative group">
+              <div 
+                key={item.name} 
+                className="relative group"
+                onMouseEnter={() => item.dropdown && handleMouseEnter(item.name)}
+                onMouseLeave={() => item.dropdown && handleMouseLeave()}
+              >
                 {item.dropdown ? (
                   <button
-                    onClick={() => toggleDropdown(item.name)}
                     className="flex items-center gap-1 px-4 py-2 text-white/80 hover:text-white transition-colors"
                   >
                     <item.icon className="h-4 w-4" />
@@ -100,6 +112,8 @@ export default function Navbar() {
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 mt-1 w-56 rounded-md overflow-hidden bg-white shadow-xl"
+                        onMouseEnter={() => handleMouseEnter(item.name)}
+                        onMouseLeave={handleMouseLeave}
                       >
                         <div className="py-1">
                           {item.dropdown.map((dropdownItem) => (

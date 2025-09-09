@@ -318,6 +318,40 @@ I would love to show you everything you need to know about building web apps wit
       subcategory: 'Backend',
       language: 'english',
     },
+    {
+      id: 21,
+      title: 'Java tutorial for beginners (2025) ☕',
+      instructor: ' Bro Code',
+      description: ` Java is a versatile and powerful programming language that is widely used for building enterprise-scale applications. In this course, we'll cover the fundamentals of Java programming, including syntax, data types, control structures, and object-oriented programming concepts. By the end of this course, you'll have a solid understanding of Java and be able to build your own applications.
+
+Whether you're new to programming or looking to expand your skill set, this course is designed to help you succeed. Let's get started! `,
+      duration: '4 weeks',
+      level: 'Beginner',
+      playlistId: 'PLZPZq0r_RZOOj_NOZYq_R2PECIMglLemc', // Updated playlist ID
+      enrolled: 55,
+      videoCount: 10,
+      thumbnail: 'https://img.youtube.com/vi/23HFxAPyJ9U/maxresdefault.jpg',
+      category: 'Programming',
+      subcategory: 'Programming Languages',
+      language: 'english',
+    },
+    {
+      id: 22,
+      title: 'Computer Science with python 101',
+      instructor: 'ScoreShala',
+      description: ` Python is a versatile and powerful programming language that is widely used for building enterprise-scale applications. In this course, we'll cover the fundamentals of Python programming, including syntax, data types, control structures, and object-oriented programming concepts. By the end of this course, you'll have a solid understanding of Python and be able to build your own applications.
+
+Whether you're new to programming or looking to expand your skill set, this course is designed to help you succeed. Let's get started! `,
+      duration: '4 weeks',
+      level: 'Beginner',
+      playlistId: 'PLmGElG-9wxc-4bD1j88gLwS7w1cIJbiYb', // Updated playlist ID
+      enrolled: 58,
+      videoCount: 34,
+      thumbnail: 'https://i.ytimg.com/vi/YNM3F00Gloo/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBhDNQtjk-dpgZsagsx2-xpsqZnXA',
+      category: 'Computer Science',
+      subcategory: 'Python',
+      language: 'english',
+    },
   ];
   export const faqs = [
     {
@@ -442,7 +476,7 @@ I would love to show you everything you need to know about building web apps wit
     },
     {
       id: 8,
-      title: 'Machine Learning Yearning',
+      title: 'Machine Learning  Learning',
       author: 'Andrew Ng',
       description: 'A guide to understanding machine learning and its real-world applications.',
       pages: 150,
@@ -462,22 +496,22 @@ I would love to show you everything you need to know about building web apps wit
       title: 'React Fundamentals Quiz',
       topic: 'React',
       difficulty: 'Easy',
-      description: 'Test your knowledge of React basics including components, props, and state.',
-      estimatedTime: 15,
-      courseId: 1, // Related to ReactJS Crash Course
+      description: 'Test your knowledge of React basics including components, props, and state management.',
+      estimatedTime: 12,
+      courseId: 1,
       questions: [
         {
-          question: 'What is JSX?',
+          question: 'What is JSX in React?',
           options: [
             'A JavaScript framework',
-            'A syntax extension for JavaScript',
+            'A syntax extension that allows writing HTML-like code in JavaScript',
             'A CSS preprocessor',
             'A database query language'
           ],
           correctAnswer: 1
         },
         {
-          question: 'Which method is used to render elements in React?',
+          question: 'Which method is used to render React elements to the DOM?',
           options: [
             'React.render()',
             'ReactDOM.render()',
@@ -487,27 +521,17 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 1
         },
         {
-          question: 'What is a React component?',
-          options: [
-            'A JavaScript function or class',
-            'A CSS class',
-            'An HTML element',
-            'A database table'
-          ],
-          correctAnswer: 0
-        },
-        {
-          question: 'How do you pass data to a React component?',
+          question: 'What is the correct way to pass data from parent to child component?',
           options: [
             'Through state',
             'Through props',
             'Through methods',
-            'Through classes'
+            'Through global variables'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What hook is used to manage state in functional components?',
+          question: 'Which hook is used to manage state in functional components?',
           options: [
             'useEffect',
             'useState',
@@ -515,65 +539,105 @@ I would love to show you everything you need to know about building web apps wit
             'useReducer'
           ],
           correctAnswer: 1
+        },
+        {
+          question: 'What will happen if you call setState() in a class component?',
+          options: [
+            'Component will not re-render',
+            'Component will re-render immediately',
+            'Component will re-render after the current execution context',
+            'Component will throw an error'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is the purpose of keys in React lists?',
+          options: [
+            'To style list items',
+            'To help React identify which items have changed',
+            'To sort the list items',
+            'To add event listeners'
+          ],
+          correctAnswer: 1
         }
       ]
     },
     {
       id: 2,
-      title: 'JavaScript ES6+ Features',
-      topic: 'JavaScript',
-      difficulty: 'Medium',
-      description: 'Explore modern JavaScript features including arrow functions, destructuring, and async/await.',
-      estimatedTime: 20,
-      courseId: 2, // Related to JavaScript tutorial
+      title: 'Advanced React Patterns',
+      topic: 'React',
+      difficulty: 'Hard',
+      description: 'Deep dive into advanced React concepts including custom hooks, context, and performance optimization.',
+      estimatedTime: 25,
+      courseId: 1,
       questions: [
         {
-          question: 'Which of the following is the correct syntax for an arrow function?',
+          question: 'What is the main purpose of React.memo()?',
           options: [
-            'function() => {}',
-            '() => {}',
-            '=> () {}',
-            'function => {}'
+            'To memorize component state',
+            'To prevent unnecessary re-renders of functional components',
+            'To cache API responses',
+            'To store component data in localStorage'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What does the spread operator (...) do?',
+          question: 'When should you use useCallback hook?',
           options: [
-            'Creates a new function',
-            'Expands an array or object',
-            'Defines a variable',
-            'Imports a module'
+            'Always when defining functions in components',
+            'When you want to memoize a function to prevent child re-renders',
+            'Only in class components',
+            'When making API calls'
           ],
           correctAnswer: 1
         },
         {
-          question: 'Which keyword is used to define constants in JavaScript?',
+          question: 'What is the difference between useEffect and useLayoutEffect?',
           options: [
-            'var',
-            'let',
-            'const',
-            'static'
-          ],
-          correctAnswer: 2
-        },
-        {
-          question: 'What is destructuring in JavaScript?',
-          options: [
-            'Breaking down functions',
-            'Extracting values from arrays or objects',
-            'Removing elements from arrays',
-            'Converting strings to numbers'
+            'There is no difference',
+            'useLayoutEffect runs synchronously after DOM mutations',
+            'useEffect is deprecated',
+            'useLayoutEffect only works in class components'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What does async/await help with?',
+          question: 'How can you prevent prop drilling in React?',
           options: [
-            'Synchronous operations',
-            'Handling promises more elegantly',
-            'Creating functions',
-            'Defining variables'
+            'Using Context API or state management libraries',
+            'Using only class components',
+            'Using inline styles',
+            'Using global variables'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What happens when you call setState multiple times in the same function?',
+          options: [
+            'Each call triggers a separate re-render',
+            'React batches the updates and triggers one re-render',
+            'Only the last setState call is executed',
+            'It causes an infinite loop'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which pattern is best for sharing stateful logic between components?',
+          options: [
+            'Higher-Order Components (HOCs)',
+            'Custom Hooks',
+            'Render Props',
+            'All of the above are valid patterns'
+          ],
+          correctAnswer: 3
+        },
+        {
+          question: 'What is the purpose of React.StrictMode?',
+          options: [
+            'To enable production mode',
+            'To highlight potential problems in an application during development',
+            'To improve performance',
+            'To add TypeScript support'
           ],
           correctAnswer: 1
         }
@@ -581,10 +645,101 @@ I would love to show you everything you need to know about building web apps wit
     },
     {
       id: 3,
-      title: 'HTML5 Semantic Elements',
+      title: 'JavaScript ES6+ Essentials',
+      topic: 'JavaScript',
+      difficulty: 'Medium',
+      description: 'Master modern JavaScript features including arrow functions, destructuring, promises, and async/await.',
+      estimatedTime: 18,
+      courseId: 2,
+      questions: [
+        {
+          question: 'What is the main difference between let and var?',
+          options: [
+            'No difference',
+            'let has block scope, var has function scope',
+            'let is faster than var',
+            'var is deprecated'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does the following code return? [...[1,2], ...[3,4]]',
+          options: [
+            '[1,2,3,4]',
+            '[[1,2],[3,4]]',
+            'Error',
+            'undefined'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'Which statement about arrow functions is correct?',
+          options: [
+            'They have their own this binding',
+            'They inherit this from the enclosing scope',
+            'They cannot return values',
+            'They are the same as regular functions'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of async/await?',
+          options: [
+            'To make code run faster',
+            'To handle asynchronous operations more readably',
+            'To create new threads',
+            'To handle errors only'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What will the following code output? const {a, b} = {a: 1, b: 2, c: 3}',
+          options: [
+            'a = 1, b = 2',
+            'a = undefined, b = undefined',
+            'Error',
+            'a = {a: 1, b: 2, c: 3}'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'How do you handle errors in async/await?',
+          options: [
+            'Using .catch()',
+            'Using try/catch blocks',
+            'Using .then()',
+            'Errors are handled automatically'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a Promise in JavaScript?',
+          options: [
+            'A function that returns a value',
+            'An object representing the eventual completion of an asynchronous operation',
+            'A way to declare variables',
+            'A type of loop'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does Array.map() return?',
+          options: [
+            'The original array modified',
+            'A new array with transformed elements',
+            'undefined',
+            'The first element only'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 4,
+      title: 'HTML5 & Semantic Web',
       topic: 'HTML',
       difficulty: 'Easy',
-      description: 'Test your understanding of HTML5 semantic elements and document structure.',
+      description: 'Test your understanding of HTML5 semantic elements, forms, and modern web standards.',
       estimatedTime: 10,
       questions: [
         {
@@ -602,40 +757,51 @@ I would love to show you everything you need to know about building web apps wit
           options: [
             'To display images',
             'To create navigation menus',
-            'To represent standalone content',
+            'To represent standalone, reusable content',
             'To style text'
           ],
           correctAnswer: 2
         },
         {
-          question: 'Which element is used for navigation links?',
+          question: 'Which attribute makes an input field required?',
           options: [
-            '<menu>',
-            '<nav>',
-            '<links>',
-            '<navigation>'
+            'mandatory',
+            'required',
+            'needed',
+            'must-fill'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What does the <aside> element represent?',
+          question: 'What does the <aside> element typically contain?',
           options: [
             'Main content',
-            'Content aside from the main content',
-            'A sidebar only',
-            'Footer content'
+            'Content related to but separate from main content',
+            'Navigation links only',
+            'Footer information'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which input type is used for email validation?',
+          options: [
+            '<input type="text">',
+            '<input type="email">',
+            '<input type="mail">',
+            '<input type="e-mail">'
           ],
           correctAnswer: 1
         }
       ]
     },
     {
-      id: 4,
-      title: 'CSS Flexbox Mastery',
+      id: 5,
+      title: 'CSS Grid & Flexbox Mastery',
       topic: 'CSS',
       difficulty: 'Medium',
-      description: 'Master CSS Flexbox properties and layout techniques.',
-      estimatedTime: 18,
+      description: 'Master modern CSS layout techniques including Flexbox and CSS Grid for responsive design.',
+      estimatedTime: 15,
+      courseId:9,
       questions: [
         {
           question: 'Which property makes an element a flex container?',
@@ -648,17 +814,27 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 0
         },
         {
-          question: 'What does justify-content control?',
+          question: 'What does justify-content: space-between do?',
           options: [
-            'Vertical alignment',
-            'Horizontal alignment along main axis',
-            'Text alignment',
-            'Element order'
+            'Centers items vertically',
+            'Distributes items with equal space between them',
+            'Aligns items to the start',
+            'Stacks items vertically'
           ],
           correctAnswer: 1
         },
         {
-          question: 'Which property controls the alignment of items along the cross axis?',
+          question: 'In CSS Grid, what does fr unit represent?',
+          options: [
+            'Pixels',
+            'Fractions of available space',
+            'Font size',
+            'Fixed ratio'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which property controls the alignment of items along the cross axis in Flexbox?',
           options: [
             'justify-content',
             'align-items',
@@ -668,47 +844,67 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 1
         },
         {
-          question: 'What does flex-direction: column do?',
+          question: 'What does grid-template-areas allow you to do?',
           options: [
-            'Creates columns',
-            'Changes main axis to vertical',
-            'Aligns items horizontally',
-            'Creates a grid'
+            'Set grid item sizes',
+            'Name grid areas for easier layout management',
+            'Change grid direction',
+            'Add grid gaps'
           ],
           correctAnswer: 1
+        },
+        {
+          question: 'How do you make a flex item take up remaining space?',
+          options: [
+            'flex: 1',
+            'width: 100%',
+            'flex-grow: auto',
+            'flex-expand: true'
+          ],
+          correctAnswer: 0
         }
       ]
     },
     {
-      id: 5,
-      title: 'Python Data Structures',
+      id: 6,
+      title: 'Python Data Structures & Algorithms',
       topic: 'Python',
       difficulty: 'Medium',
-      description: 'Test your knowledge of Python lists, dictionaries, sets, and tuples.',
-      estimatedTime: 25,
+      description: 'Test your knowledge of Python data structures, algorithms, and problem-solving techniques.',
+      estimatedTime: 20,
       questions: [
         {
-          question: 'Which data structure is ordered and changeable in Python?',
+          question: 'What is the time complexity of accessing an element in a Python list by index?',
           options: [
-            'Tuple',
+            'O(n)',
+            'O(log n)',
+            'O(1)',
+            'O(n²)'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'Which data structure would you use for a LIFO (Last In, First Out) operation?',
+          options: [
+            'Queue',
+            'Stack',
             'Set',
-            'List',
             'Dictionary'
           ],
-          correctAnswer: 2
+          correctAnswer: 1
         },
         {
-          question: 'How do you create an empty dictionary in Python?',
+          question: 'What does the following code output? print([1, 2, 3] + [4, 5])',
           options: [
-            '[]',
-            '()',
-            '{}',
-            'dict()'
+            'Error',
+            '[1, 2, 3, 4, 5]',
+            '[[1, 2, 3], [4, 5]]',
+            '15'
           ],
-          correctAnswer: 2
+          correctAnswer: 1
         },
         {
-          question: 'Which method adds an item to the end of a list?',
+          question: 'Which method adds an item to the end of a Python list?',
           options: [
             'add()',
             'append()',
@@ -718,47 +914,58 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 1
         },
         {
-          question: 'What makes a set different from a list?',
+          question: 'What makes a Python set different from a list?',
           options: [
             'Sets are ordered',
             'Sets allow duplicates',
-            'Sets are unordered and unique',
+            'Sets are unordered and contain unique elements',
             'Sets are immutable'
           ],
           correctAnswer: 2
         },
         {
-          question: 'How do you access a dictionary value by key?',
+          question: 'What is the output of: dict.get("key", "default")?',
           options: [
-            'dict[key]',
-            'dict.get(key)',
-            'Both A and B',
-            'dict(key)'
+            'Always returns the key',
+            'Returns the value for "key" or "default" if key doesn\'t exist',
+            'Always returns "default"',
+            'Throws an error'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which sorting algorithm is used by Python\'s sorted() function?',
+          options: [
+            'Quick Sort',
+            'Merge Sort',
+            'Timsort (hybrid of merge sort and insertion sort)',
+            'Bubble Sort'
           ],
           correctAnswer: 2
         }
       ]
     },
     {
-      id: 6,
-      title: 'Database Fundamentals',
+      id: 7,
+      title: 'Database Design & SQL Fundamentals',
       topic: 'Database',
-      difficulty: 'Easy',
-      description: 'Basic concepts of databases, SQL, and data modeling.',
-      estimatedTime: 15,
+      difficulty: 'Medium',
+      description: 'Comprehensive test on database design principles, SQL queries, and data modeling concepts.',
+      estimatedTime: 22,
+      courseId:13,
       questions: [
         {
-          question: 'What does SQL stand for?',
+          question: 'What is a primary key in a database?',
           options: [
-            'Structured Query Language',
-            'Simple Query Language',
-            'Standard Query Language',
-            'Sequential Query Language'
+            'The first column in a table',
+            'A unique identifier for each record in a table',
+            'A password for the database',
+            'The most important data in a table'
           ],
-          correctAnswer: 0
+          correctAnswer: 1
         },
         {
-          question: 'Which command is used to retrieve data from a database?',
+          question: 'Which SQL command is used to retrieve data from a database?',
           options: [
             'GET',
             'FETCH',
@@ -768,57 +975,98 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 2
         },
         {
-          question: 'What is a primary key?',
+          question: 'What is database normalization?',
           options: [
-            'A key that opens the database',
-            'A unique identifier for a record',
-            'The first column in a table',
-            'A password for the database'
-          ],
-          correctAnswer: 1
-        },
-        {
-          question: 'What is normalization in databases?',
-          options: [
-            'Making data normal',
-            'Organizing data to reduce redundancy',
+            'Making all data the same format',
+            'Organizing data to reduce redundancy and improve integrity',
             'Sorting data alphabetically',
-            'Backing up data'
-          ],
-          correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 7,
-      title: 'Machine Learning Basics',
-      topic: 'Machine Learning',
-      difficulty: 'Medium',
-      description: 'Fundamental concepts of machine learning and data science.',
-      estimatedTime: 30,
-      questions: [
-        {
-          question: 'What is supervised learning?',
-          options: [
-            'Learning with a teacher present',
-            'Learning with labeled training data',
-            'Learning without any data',
-            'Learning online courses'
+            'Backing up the database'
           ],
           correctAnswer: 1
         },
         {
-          question: 'Which algorithm is commonly used for classification?',
+          question: 'What type of relationship allows one record to be associated with many records?',
           options: [
-            'Linear Regression',
-            'K-Means',
-            'Decision Tree',
-            'PCA'
+            'One-to-One',
+            'One-to-Many',
+            'Many-to-Many',
+            'None-to-None'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which SQL clause is used to filter results?',
+          options: [
+            'SELECT',
+            'FROM',
+            'WHERE',
+            'ORDER BY'
           ],
           correctAnswer: 2
         },
         {
-          question: 'What is overfitting?',
+          question: 'What is an index in a database?',
+          options: [
+            'A list of all tables',
+            'A data structure that improves query performance',
+            'The first row of a table',
+            'A backup of the database'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does ACID stand for in database transactions?',
+          options: [
+            'Atomicity, Consistency, Isolation, Durability',
+            'Access, Control, Integration, Design',
+            'Automated, Consistent, Integrated, Durable',
+            'Advanced, Centralized, Intelligent, Dynamic'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'Which JOIN returns all records from both tables?',
+          options: [
+            'INNER JOIN',
+            'LEFT JOIN',
+            'RIGHT JOIN',
+            'FULL OUTER JOIN'
+          ],
+          correctAnswer: 3
+        }
+      ]
+    },
+    {
+      id: 8,
+      title: 'Machine Learning Fundamentals',
+      topic: 'Machine Learning',
+      difficulty: 'Medium',
+      description: 'Test your understanding of machine learning concepts, algorithms, and practical applications.',
+      estimatedTime: 25,
+      courseId:5,
+      questions: [
+        {
+          question: 'What is supervised learning?',
+          options: [
+            'Learning with a human supervisor present',
+            'Learning from labeled training data',
+            'Learning without any data',
+            'Learning only from books'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which algorithm is commonly used for classification problems?',
+          options: [
+            'Linear Regression',
+            'K-Means Clustering',
+            'Decision Tree',
+            'Principal Component Analysis'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is overfitting in machine learning?',
           options: [
             'Model performs well on training data but poorly on new data',
             'Model is too simple',
@@ -831,91 +1079,151 @@ I would love to show you everything you need to know about building web apps wit
           question: 'What is the purpose of cross-validation?',
           options: [
             'To validate the programmer',
-            'To assess model performance',
+            'To assess model performance and generalization',
             'To clean the data',
             'To visualize results'
           ],
           correctAnswer: 1
-        }
-      ]
-    },
-    {
-      id: 8,
-      title: 'Cybersecurity Fundamentals',
-      topic: 'Cybersecurity',
-      difficulty: 'Medium',
-      description: 'Essential cybersecurity concepts and best practices.',
-      estimatedTime: 20,
-      questions: [
-        {
-          question: 'What is the principle of least privilege?',
-          options: [
-            'Give users minimum access needed',
-            'Give everyone admin access',
-            'Restrict all access',
-            'Give access based on seniority'
-          ],
-          correctAnswer: 0
         },
         {
-          question: 'What is a firewall?',
+          question: 'Which metric is best for evaluating a classification model with imbalanced classes?',
           options: [
-            'A wall that prevents fires',
-            'A network security device',
-            'An antivirus software',
-            'A backup system'
+            'Accuracy',
+            'F1-Score',
+            'Mean Squared Error',
+            'R-squared'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What does encryption do?',
+          question: 'What is feature engineering?',
           options: [
-            'Deletes data',
-            'Compresses data',
-            'Converts data to unreadable format',
-            'Copies data'
+            'Building hardware for ML',
+            'The process of selecting and transforming variables for your model',
+            'Engineering software features',
+            'Creating user interfaces'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the bias-variance tradeoff?',
+          options: [
+            'A tradeoff between model complexity and interpretability',
+            'A tradeoff between underfitting and overfitting',
+            'A tradeoff between speed and accuracy',
+            'A tradeoff between training and testing time'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which algorithm is used for dimensionality reduction?',
+          options: [
+            'Linear Regression',
+            'Random Forest',
+            'Principal Component Analysis (PCA)',
+            'Support Vector Machine'
           ],
           correctAnswer: 2
-        },
-        {
-          question: 'What is phishing?',
-          options: [
-            'Catching fish',
-            'A type of social engineering attack',
-            'A programming technique',
-            'A database operation'
-          ],
-          correctAnswer: 1
         }
       ]
     },
     {
       id: 9,
-      title: 'Cloud Computing Essentials',
-      topic: 'Cloud Computing',
-      difficulty: 'Easy',
-      description: 'Introduction to cloud computing concepts and services.',
-      estimatedTime: 15,
+      title: 'Cybersecurity Essentials',
+      topic: 'Cybersecurity',
+      difficulty: 'Medium',
+      description: 'Essential cybersecurity concepts, threat analysis, and security best practices for modern applications.',
+      estimatedTime: 20,
       questions: [
         {
-          question: 'What is cloud computing?',
+          question: 'What is the principle of least privilege?',
           options: [
-            'Computing in the sky',
-            'On-demand delivery of IT resources over the internet',
-            'A weather prediction system',
-            'A type of network cable'
+            'Give users maximum access for convenience',
+            'Give users only the minimum access needed to perform their job',
+            'Give everyone admin access',
+            'Restrict all access completely'
           ],
           correctAnswer: 1
         },
         {
-          question: 'Which is a cloud service model?',
+          question: 'What is a SQL injection attack?',
           options: [
-            'SaaS',
-            'PaaS',
-            'IaaS',
-            'All of the above'
+            'Injecting JavaScript into HTML',
+            'Inserting malicious SQL code into application queries',
+            'Adding CSS to databases',
+            'Installing SQL software illegally'
           ],
-          correctAnswer: 3
+          correctAnswer: 1
+        },
+        {
+          question: 'What does HTTPS provide that HTTP doesn\'t?',
+          options: [
+            'Faster loading times',
+            'Encryption and authentication',
+            'Better SEO rankings only',
+            'Colored text'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is two-factor authentication (2FA)?',
+          options: [
+            'Using two passwords',
+            'Authentication requiring two different factors',
+            'Logging in twice',
+            'Using two different browsers'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is phishing?',
+          options: [
+            'A fishing technique',
+            'A social engineering attack to steal sensitive information',
+            'A programming technique',
+            'A database operation'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a firewall\'s primary purpose?',
+          options: [
+            'To prevent computer overheating',
+            'To monitor and control network traffic',
+            'To speed up internet connection',
+            'To organize files'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is encryption?',
+          options: [
+            'Deleting data permanently',
+            'Converting data into a coded format to prevent unauthorized access',
+            'Compressing files',
+            'Copying data to multiple locations'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 10,
+      title: 'Cloud Computing Architecture',
+      topic: 'Cloud Computing',
+      difficulty: 'Medium',
+      description: 'Comprehensive assessment of cloud computing concepts, services, and architectural patterns.',
+      estimatedTime: 18,
+      questions: [
+        {
+          question: 'What is cloud computing?',
+          options: [
+            'Computing with clouds in the sky',
+            'On-demand delivery of IT resources over the internet',
+            'A weather prediction system',
+            'Local network computing'
+          ],
+          correctAnswer: 1
         },
         {
           question: 'What does SaaS stand for?',
@@ -928,63 +1236,523 @@ I would love to show you everything you need to know about building web apps wit
           correctAnswer: 0
         },
         {
-          question: 'Which is a benefit of cloud computing?',
+          question: 'Which is a characteristic of cloud computing?',
           options: [
-            'Scalability',
-            'Cost efficiency',
-            'Accessibility',
-            'All of the above'
+            'Limited scalability',
+            'High upfront costs',
+            'On-demand self-service',
+            'Single-tenant architecture'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is the difference between IaaS and PaaS?',
+          options: [
+            'No difference',
+            'IaaS provides infrastructure, PaaS provides platform and development tools',
+            'IaaS is faster than PaaS',
+            'PaaS is only for mobile apps'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is auto-scaling in cloud computing?',
+          options: [
+            'Manually adjusting resources',
+            'Automatically adjusting resources based on demand',
+            'Scaling only during business hours',
+            'Fixed resource allocation'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a benefit of using CDN (Content Delivery Network)?',
+          options: [
+            'Increased server costs',
+            'Slower content delivery',
+            'Improved performance and reduced latency',
+            'Reduced security'
+          ],
+          correctAnswer: 2
+        }
+      ]
+    },
+    {
+      id: 11,
+      title: 'Node.js Backend Development',
+      topic: 'Node.js',
+      difficulty: 'Medium',
+      description: 'Test your knowledge of Node.js, Express.js, and backend development concepts.',
+      estimatedTime: 20,
+      courseId:6,
+      questions: [
+        {
+          question: 'What is Node.js?',
+          options: [
+            'A JavaScript framework',
+            'A JavaScript runtime built on Chrome\'s V8 engine',
+            'A database',
+            'A CSS preprocessor'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the event loop in Node.js?',
+          options: [
+            'A programming loop',
+            'A mechanism that handles asynchronous operations',
+            'A debugging tool',
+            'A package manager'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which module is used to create HTTP servers in Node.js?',
+          options: [
+            'fs',
+            'path',
+            'http',
+            'url'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'What is middleware in Express.js?',
+          options: [
+            'Hardware components',
+            'Functions that execute during request-response cycle',
+            'Database connections',
+            'Client-side scripts'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'How do you handle errors in Node.js callbacks?',
+          options: [
+            'Ignore them',
+            'Check the first parameter (error-first callback pattern)',
+            'Use try-catch only',
+            'Errors are handled automatically'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is npm?',
+          options: [
+            'Node Package Manager',
+            'New Programming Method',
+            'Network Protocol Manager',
+            'Node Performance Monitor'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What is the purpose of package.json?',
+          options: [
+            'To store user data',
+            'To contain metadata about the project and dependencies',
+            'To configure the database',
+            'To style the application'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 12,
+      title: 'Algorithm Design & Analysis',
+      topic: 'Algorithms',
+      difficulty: 'Hard',
+      description: 'Advanced algorithmic thinking, complexity analysis, and problem-solving strategies.',
+      estimatedTime: 30,
+      questions: [
+        {
+          question: 'What is the time complexity of binary search?',
+          options: [
+            'O(n)',
+            'O(log n)',
+            'O(n²)',
+            'O(1)'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which sorting algorithm has the best average-case time complexity?',
+          options: [
+            'Bubble Sort - O(n²)',
+            'Quick Sort - O(n log n)',
+            'Selection Sort - O(n²)',
+            'Insertion Sort - O(n²)'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is dynamic programming?',
+          options: [
+            'Programming that changes at runtime',
+            'An optimization technique using memoization to solve overlapping subproblems',
+            'Programming with dynamic languages',
+            'Real-time programming'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the space complexity of merge sort?',
+          options: [
+            'O(1)',
+            'O(log n)',
+            'O(n)',
+            'O(n²)'
+          ],
+          correctAnswer: 2
+        },
+        {
+          question: 'Which data structure is best for implementing a graph?',
+          options: [
+            'Array',
+            'Adjacency List or Adjacency Matrix',
+            'Stack',
+            'Queue'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the difference between DFS and BFS?',
+          options: [
+            'No difference',
+            'DFS uses stack (recursive), BFS uses queue',
+            'DFS is always faster',
+            'BFS only works on trees'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the best approach to solve the "Traveling Salesman Problem"?',
+          options: [
+            'Greedy algorithm always gives optimal solution',
+            'Dynamic Programming with bitmask for exact solution',
+            'Simple brute force is most efficient',
+            'It cannot be solved'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is Big O notation used for?',
+          options: [
+            'Measuring code quality',
+            'Describing algorithm efficiency as input size grows',
+            'Counting lines of code',
+            'Measuring memory usage only'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'Which technique is used to solve optimization problems?',
+          options: [
+            'Divide and Conquer',
+            'Dynamic Programming',
+            'Greedy Algorithms',
+            'All of the above can be used depending on the problem'
           ],
           correctAnswer: 3
         }
       ]
     },
     {
-      id: 10,
-      title: 'Advanced React Patterns',
-      topic: 'React',
+      id: 13,
+      title: 'Web Security Best Practices',
+      topic: 'Cybersecurity',
       difficulty: 'Hard',
-      description: 'Advanced React concepts including hooks, context, and performance optimization.',
+      description: 'Advanced web security concepts, vulnerability assessment, and secure coding practices.',
       estimatedTime: 25,
-      courseId: 1,
       questions: [
         {
-          question: 'What is the purpose of useEffect hook?',
+          question: 'What is Cross-Site Scripting (XSS)?',
           options: [
-            'To manage state',
-            'To handle side effects',
-            'To create components',
-            'To style elements'
+            'A CSS styling technique',
+            'Injecting malicious scripts into web pages viewed by other users',
+            'Sharing scripts between websites',
+            'A JavaScript framework'
           ],
           correctAnswer: 1
         },
         {
-          question: 'When does useEffect run by default?',
+          question: 'How can you prevent CSRF (Cross-Site Request Forgery) attacks?',
           options: [
-            'Only on mount',
-            'Only on unmount',
-            'After every render',
-            'Never'
-          ],
-          correctAnswer: 2
-        },
-        {
-          question: 'What is React.memo used for?',
-          options: [
-            'Memory management',
-            'Component memoization',
-            'State management',
-            'Routing'
+            'Use HTTPS only',
+            'Implement CSRF tokens and validate origins',
+            'Disable JavaScript',
+            'Use strong passwords'
           ],
           correctAnswer: 1
         },
         {
-          question: 'What is the Context API used for?',
+          question: 'What is Content Security Policy (CSP)?',
           options: [
-            'Styling components',
-            'Sharing state across components',
-            'Routing',
-            'API calls'
+            'A web security standard to prevent XSS and data injection attacks',
+            'A content management system',
+            'A CSS framework',
+            'A JavaScript library'
+          ],
+          correctAnswer: 0
+        },
+        {
+          question: 'What is the purpose of input validation?',
+          options: [
+            'To improve performance',
+            'To prevent malicious data from being processed',
+            'To format user interface',
+            'To compress data'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a security vulnerability in JWT tokens?',
+          options: [
+            'They expire too quickly',
+            'They can be decoded client-side revealing sensitive information',
+            'They are too long',
+            'They only work with HTTPS'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the principle of defense in depth?',
+          options: [
+            'Using one strong security measure',
+            'Implementing multiple layers of security controls',
+            'Hiding security measures',
+            'Using only passwords'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'How should passwords be stored in a database?',
+          options: [
+            'In plain text',
+            'Hashed with salt using algorithms like bcrypt',
+            'Encrypted with AES',
+            'Base64 encoded'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is rate limiting and why is it important?',
+          options: [
+            'Limiting code execution speed',
+            'Controlling the rate of requests to prevent abuse and DDoS attacks',
+            'Limiting database connections',
+            'Controlling network bandwidth'
+          ],
+          correctAnswer: 1
+        }
+      ]
+    },
+    {
+      id: 14,
+      title: 'Advanced Python Programming',
+      topic: 'Python',
+      difficulty: 'Hard',
+      description: 'Deep dive into Python\'s advanced features, decorators, generators, and design patterns.',
+      estimatedTime: 28,
+      questions: [
+        {
+          question: 'What is a Python decorator?',
+          options: [
+            'A design pattern',
+            'A function that modifies the behavior of another function',
+            'A data structure',
+            'A type of variable'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the difference between __str__ and __repr__?',
+          options: [
+            'No difference',
+            '__str__ is for end users, __repr__ is for developers/debugging',
+            '__str__ is faster',
+            '__repr__ is deprecated'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What does the following code do? yield x',
+          options: [
+            'Returns x and exits the function',
+            'Pauses the function and returns x, allowing resumption later',
+            'Throws an exception',
+            'Prints x'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the Global Interpreter Lock (GIL)?',
+          options: [
+            'A security feature',
+            'A mutex that prevents multiple threads from executing Python bytecode simultaneously',
+            'A debugging tool',
+            'A performance optimizer'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a context manager in Python?',
+          options: [
+            'A memory manager',
+            'An object that defines methods for use with the "with" statement',
+            'A database connection',
+            'A file system'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the difference between deep copy and shallow copy?',
+          options: [
+            'No difference',
+            'Deep copy creates new objects recursively, shallow copy creates new object but keeps references',
+            'Deep copy is faster',
+            'Shallow copy uses more memory'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a metaclass in Python?',
+          options: [
+            'A class that inherits from multiple classes',
+            'A class whose instances are classes themselves',
+            'A class with static methods only',
+            'An abstract class'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'How do you handle memory leaks in Python?',
+          options: [
+            'Python automatically handles all memory',
+            'Use weak references for circular references and proper resource management',
+            'Restart the program frequently',
+            'Use only built-in types'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of *args and **kwargs?',
+          options: [
+            'To pass variable number of arguments to functions',
+            'To create global variables',
+            'To handle exceptions',
+            'To define class methods'
+          ],
+          correctAnswer: 0
+        }
+      ]
+    },
+    {
+      id: 15,
+      title: 'DevOps & Deployment Strategies',
+      topic: 'Cloud Computing',
+      difficulty: 'Hard',
+      description: 'Advanced DevOps practices, CI/CD pipelines, containerization, and deployment strategies.',
+      estimatedTime: 30,
+      questions: [
+        {
+          question: 'What is the main benefit of containerization?',
+          options: [
+            'Faster code execution',
+            'Application consistency across different environments',
+            'Reduced code size',
+            'Better user interfaces'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the difference between Docker and a Virtual Machine?',
+          options: [
+            'No difference',
+            'Docker shares the host OS kernel, VMs run complete OS instances',
+            'Docker is slower',
+            'VMs are more portable'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a CI/CD pipeline?',
+          options: [
+            'A data processing pipeline',
+            'Continuous Integration and Continuous Deployment automation',
+            'A network protocol',
+            'A database replication method'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is Infrastructure as Code (IaC)?',
+          options: [
+            'Writing code for infrastructure management',
+            'Managing infrastructure through machine-readable definition files',
+            'Coding on infrastructure servers',
+            'Manual server configuration'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is blue-green deployment?',
+          options: [
+            'Using blue and green colors in UI',
+            'A deployment strategy with two identical production environments',
+            'A testing methodology',
+            'A security practice'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is Kubernetes?',
+          options: [
+            'A programming language',
+            'A container orchestration platform',
+            'A database management system',
+            'A web framework'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of monitoring and logging in production?',
+          options: [
+            'To slow down applications',
+            'To detect issues, track performance, and maintain system health',
+            'To increase costs',
+            'To complicate deployment'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is a microservices architecture?',
+          options: [
+            'Very small applications',
+            'An architectural approach with small, independent services',
+            'A mobile app development pattern',
+            'A database design pattern'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is the purpose of load balancing?',
+          options: [
+            'To reduce server costs',
+            'To distribute incoming requests across multiple servers',
+            'To balance code complexity',
+            'To manage database connections'
+          ],
+          correctAnswer: 1
+        },
+        {
+          question: 'What is automated testing in DevOps?',
+          options: [
+            'Manual testing done faster',
+            'Running tests automatically as part of the development pipeline',
+            'Testing only user interfaces',
+            'Testing only databases'
           ],
           correctAnswer: 1
         }
